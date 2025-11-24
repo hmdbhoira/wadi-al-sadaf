@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/* Wadi Al Sadaf Brand Colors */
+:root {
+  --brand-gold: #9C7F4F;
+  --brand-gold-light: #D4AF37;
+  --brand-gold-dark: #7A6338;
+  --brand-cream: #F5F2E8;
+  --brand-black: #1a1a1a;
+  --brand-gray: #4a4a4a;
+  --brand-white: #ffffff;
+  --brand-navy: #1e293b;
+}

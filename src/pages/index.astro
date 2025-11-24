@@ -1,0 +1,100 @@
+---
+// Homepage - temporary simple version
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Home"
+  description="Wadi Al Sadaf - Your trusted partner in industrial automation, electrical, and instrumentation solutions."
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-brand-cream to-white py-24">
+    <div class="container mx-auto px-4 text-center">
+      <img src="/images/logo.jpeg" alt="Wadi Al Sadaf" class="h-32 w-32 object-contain mx-auto mb-6 rounded-full shadow-lg" />
+      <h1 class="text-5xl md:text-6xl font-bold text-brand-black mb-6">
+        Wadi Al Sadaf
+      </h1>
+      <p class="text-xl md:text-2xl text-brand-gold font-medium mb-4">
+        General Trading LLC
+      </p>
+      <p class="text-lg text-brand-gray max-w-3xl mx-auto mb-8">
+        Your trusted partner in industrial automation, electrical, and instrumentation solutions.
+        Serving industries including Sugar, Pharma, Cement, Paper, Food & Beverage, Metals & Mining.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/machinery/"
+          class="bg-brand-gold text-white px-8 py-4 rounded-md hover:bg-brand-gold-dark transition-colors font-medium text-lg"
+        >
+          Explore Machinery
+        </a>
+        <a
+          href="/contact/"
+          class="bg-white text-brand-gold border-2 border-brand-gold px-8 py-4 rounded-md hover:bg-brand-cream transition-colors font-medium text-lg"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-brand-black text-center mb-12">
+        Our Solutions
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <a href="/machinery/electrical/" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all border border-gray-200 hover:border-brand-gold">
+          <h3 class="text-xl font-bold text-brand-gold mb-2">Electrical</h3>
+          <p class="text-brand-gray">Complete range of electrical products including VFDs, motors, transformers, and control components.</p>
+        </a>
+        <a href="/machinery/automation/" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all border border-gray-200 hover:border-brand-gold">
+          <h3 class="text-xl font-bold text-brand-gold mb-2">Automation</h3>
+          <p class="text-brand-gray">Advanced automation solutions including PLCs, HMIs, industrial PCs, and robotic systems.</p>
+        </a>
+        <a href="/machinery/instrumentation/" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all border border-gray-200 hover:border-brand-gold">
+          <h3 class="text-xl font-bold text-brand-gold mb-2">Instrumentation</h3>
+          <p class="text-brand-gray">Comprehensive instrumentation for flow, level, pressure, and temperature measurement.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="bg-brand-cream py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-brand-black mb-6">About Us</h2>
+        <p class="text-lg text-brand-gray mb-4">
+          Wadi Al Sadaf is formed by a group of enthusiastic professionals having decades of experience in industries like Sugar, Pharma, Cement, Paper, Food and Beverage, Metals & Mining.
+        </p>
+        <p class="text-lg text-brand-gray mb-6">
+          We provide a level of service that will exceed the expectations of our clients, maintain the highest level of quality, and instill confidence with all parties by professionally managing all aspects of each and every project.
+        </p>
+        <a href="/about/" class="text-brand-gold hover:text-brand-gold-dark font-medium">
+          Learn More About Us →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-brand-black mb-4">Get in Touch</h2>
+      <p class="text-lg text-brand-gray mb-8 max-w-2xl mx-auto">
+        Our expert technical team is ready to help you find the right solutions for your industrial needs.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+971554274256" class="text-brand-gold hover:text-brand-gold-dark font-medium text-lg">
+          📱 +971 55 427 4256
+        </a>
+        <span class="hidden sm:inline text-brand-gray">|</span>
+        <a href="mailto:wadialsadaf.sales@gmail.com" class="text-brand-gold hover:text-brand-gold-dark font-medium text-lg">
+          ✉ wadialsadaf.sales@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

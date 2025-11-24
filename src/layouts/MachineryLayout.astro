@@ -1,0 +1,31 @@
+---
+// Machinery domain layout
+import Header from '../components/machinery/Header.astro';
+import Footer from '../components/machinery/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Wadi Al Sadaf Machinery - Industrial automation, electrical, and instrumentation solutions.' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title} | Wadi Al Sadaf Machinery</title>
+    <link rel="icon" type="image/jpeg" href="/images/logo.jpeg" />
+  </head>
+  <body class="flex flex-col min-h-screen bg-white text-brand-black">
+    <Header />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,143 @@
+---
+// Electrical category page - shows all electrical products
+import MachineryLayout from '../../../layouts/MachineryLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { getCategoryBySlug } from '../../../data/machinery';
+
+const category = getCategoryBySlug('electrical');
+
+if (!category) {
+  return Astro.redirect('/404');
+}
+
+const breadcrumbs = [
+  { label: 'Home', href: '/machinery/' },
+  { label: 'Products', href: '/machinery/products/' },
+  { label: category.name },
+];
+---
+
+<MachineryLayout
+  title={`${category.name} Products`}
+  description={category.description}
+>
+  <!-- Hero Section -->
+  <section class="relative bg-black py-24 md:py-32">
+    <div class="absolute inset-0 opacity-40">
+      <div class={`absolute inset-0 bg-[url('${category.heroImage}')] bg-cover bg-center`}></div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-br from-black/60 to-brand-gold-dark/60"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="text-center max-w-4xl mx-auto mt-8">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-2xl">
+          {category.name} Products
+        </h1>
+        <p class="text-xl md:text-2xl text-white mb-8 drop-shadow-xl">
+          {category.description}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brands Section -->
+  {
+    category.brands && category.brands.length > 0 && (
+      <section class="py-12 bg-white border-y border-gray-200">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-[var(--brand-black)] mb-3">Trusted Brands</h3>
+            <p class="text-[var(--brand-gray)]">Industry-leading manufacturers we partner with</p>
+          </div>
+          <div class="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+            {category.brands.map((brand) => (
+              <span class="bg-[var(--brand-cream)] text-[var(--brand-gold-dark)] px-6 py-3 rounded-lg font-medium text-sm shadow-sm border border-[var(--brand-gold)]/20">
+                {brand}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Products Grid -->
+  <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-[var(--brand-black)] text-center mb-4">
+        Browse {category.name} Products
+      </h2>
+      <p class="text-center text-[var(--brand-gray)] mb-12 max-w-2xl mx-auto">
+        {category.products.length} products available
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        {
+          category.products.map((product) => (
+            <a
+              href={`/machinery/${category.slug}/${product.slug}/`}
+              class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-gray-200 hover:border-[var(--brand-gold)] transform hover:-translate-y-1"
+            >
+              <!-- Product Image -->
+              <div class="relative h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              </div>
+
+              <!-- Product Info -->
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-[var(--brand-black)] mb-3 group-hover:text-[var(--brand-gold-dark)] transition-colors">
+                  {product.name}
+                </h3>
+                <p class="text-[var(--brand-gray)] text-sm mb-4 leading-relaxed line-clamp-3">
+                  {product.description}
+                </p>
+
+                <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-200">
+                  <span class="text-[var(--brand-gold)] font-semibold group-hover:text-[var(--brand-gold-dark)] transition-colors text-sm">
+                    View Details
+                  </span>
+                  <span class="text-[var(--brand-gold)] group-hover:translate-x-2 transition-transform duration-300 text-xl">
+                    →
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="relative bg-[var(--brand-gold)] py-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <h2 class="text-4xl font-bold text-white mb-6">Need Technical Assistance?</h2>
+      <p class="text-xl text-white mb-10 max-w-2xl mx-auto leading-relaxed">
+        Our expert team can help you select the right {category.name.toLowerCase()} products for your specific application requirements.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/machinery/contact/"
+          class="bg-white text-[var(--brand-gold)] px-10 py-4 rounded-lg hover:bg-[var(--brand-cream)] transition-all font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+        >
+          Contact Us
+        </a>
+        <a
+          href="tel:+971554274256"
+          class="bg-[var(--brand-gold-dark)] text-white px-10 py-4 rounded-lg hover:bg-[var(--brand-black)] transition-all font-semibold text-lg border-3 border-white shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+        >
+          📱 +971 55 427 4256
+        </a>
+      </div>
+    </div>
+  </section>
+</MachineryLayout>

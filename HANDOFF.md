@@ -64,19 +64,25 @@ wadi-al-sadaf/
 
 ## Project Architecture (Multi-Vertical Strategy)
 
-### URL Structure (Subfolders)
-```
-wadialsadaf.com/              # Hub homepage
-wadialsadaf.com/machinery/     # Machinery section
-wadialsadaf.com/furniture/     # Furniture section
-wadialsadaf.com/medical/       # Medical section (future)
-```
+**⚠️ IMPORTANT: Read ARCHITECTURE.md for complete details!**
 
-### Design System Approach
-- **Shared components**: Header, Footer, Layout
-- **Section-specific accents**: Each vertical gets unique color theme
-- **Hub homepage**: 3 tiles linking to each section
-- **SEO**: Separate sitemaps per section
+The `ARCHITECTURE.md` file contains:
+- Complete URL structure with subdirectories
+- Detailed build order (Machinery FIRST, then Furniture)
+- Hub homepage strategy (why NO auto-redirect)
+- Design system with section theming
+- Complete file structure (monorepo approach)
+- Navigation & UX patterns
+- SEO strategy per section
+- Deployment workflow
+- Everything we discussed with GPT
+
+### Quick Summary
+- **URL Strategy**: Subfolders (NOT subdomains)
+- **Hub Homepage**: 3 vertical tiles, NO redirect to sections
+- **Build Order**: Machinery → Furniture → Medical (later)
+- **Design**: Shared shell + section-specific accent colors
+- **SEO**: Separate sitemaps per section, no keyword cannibalization
 
 ---
 

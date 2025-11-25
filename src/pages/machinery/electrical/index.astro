@@ -57,7 +57,7 @@ const breadcrumbs = [
           category.products.map((product) => (
             <a
               href={`${baseUrl}machinery/${category.slug}/${product.slug}/`}
-              class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-gray-200 hover:border-[var(--brand-gold)] transform hover:-translate-y-1"
+              class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-gray-200 hover:border-[var(--brand-gold)] transform hover:-translate-y-1 flex flex-col h-full"
             >
               <!-- Product Image -->
               <div class="relative h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
@@ -70,7 +70,7 @@ const breadcrumbs = [
               </div>
 
               <!-- Product Info -->
-              <div class="p-6">
+              <div class="p-6 flex flex-col flex-grow">
                 <h3 class="text-xl font-bold text-[var(--brand-black)] mb-3 group-hover:text-[var(--brand-gold-dark)] transition-colors">
                   {product.name}
                 </h3>
@@ -78,7 +78,7 @@ const breadcrumbs = [
                   {product.description}
                 </p>
 
-                <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-200">
+                <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-200">
                   <span class="text-[var(--brand-gold)] font-semibold group-hover:text-[var(--brand-gold-dark)] transition-colors text-sm">
                     View Details
                   </span>

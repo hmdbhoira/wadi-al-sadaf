@@ -19,7 +19,28 @@
 - Breadcrumbs: Home > Products
 - **Status:** ✅ COMPLETE AND CORRECT
 
-### 4. Component Structure
+### 4. `/machinery/electrical/` (Electrical Category)
+- Shows 8 electrical product cards
+- Hero image with category description
+- Breadcrumbs: Home > Products > Electrical
+- Brands section with trusted manufacturers
+- **Status:** ✅ COMPLETE AND CORRECT
+
+### 5. `/machinery/automation/` (Automation Category)
+- Shows 8 automation product cards
+- Hero image with category description
+- Breadcrumbs: Home > Products > Automation
+- Brands section with trusted manufacturers
+- **Status:** ✅ COMPLETE AND CORRECT
+
+### 6. `/machinery/instrumentation/` (Instrumentation Category)
+- Shows 8 instrumentation product cards
+- Hero image with category description
+- Breadcrumbs: Home > Products > Instrumentation
+- Brands section with trusted manufacturers
+- **Status:** ✅ COMPLETE AND CORRECT
+
+### 7. Component Structure
 ```
 src/components/
 ├── machinery/
@@ -34,33 +55,42 @@ src/layouts/
 └── FurnitureLayout.astro  (future)
 ```
 
-### 5. Data & Images
-- ✅ machinery.ts data file with all categories/products
-- ✅ Electrical images (9 complete)
-- ✅ Automation images (9 complete)
-- ⚠️ Instrumentation images (3/9 - need 6 more)
+### 8. Data & Images
+- ✅ machinery.ts data file with all categories/products (24 total products)
+- ✅ Electrical images (9 complete: 1 hero + 8 products)
+- ✅ Automation images (9 complete: 1 hero + 8 products)
+- ✅ Instrumentation images (9 complete: 1 hero + 8 products)
+- ✅ Logo image
+- **Total:** 28 images
 
-### 6. Brand Colors
+### 9. Brand Colors
 - ✅ Gold colors configured in Tailwind
-- ✅ Being used in machinery domain
+- ✅ Navy, cream, and gray colors configured
+- ✅ Being used consistently across machinery domain
+
+### 10. GitHub Pages Deployment
+- ✅ Configured for subdirectory deployment (`/wadi-al-sadaf/`)
+- ✅ All paths correctly include base URL
+- ✅ Navigation links work correctly
+- ✅ Images load properly
+- ✅ CSS loads correctly
+- ✅ `.nojekyll` file added for `_astro` directory support
+- **Status:** ✅ READY FOR DEPLOYMENT
 
 ---
 
 ## ❌ What Still Needs To Be Built
 
 ### Machinery Domain Pages:
-1. `/machinery/electrical/` - Category page with 8 product cards
-2. `/machinery/automation/` - Category page with 8 product cards
-3. `/machinery/instrumentation/` - Category page with 8 product cards
-4. `/machinery/electrical/vfd/` - Product detail pages (x24 products total)
-5. `/machinery/about/` - About page
-6. `/machinery/contact/` - Contact page
+1. `/machinery/electrical/vfd/` - Product detail pages (x8 electrical products)
+2. `/machinery/automation/plc/` - Product detail pages (x8 automation products)
+3. `/machinery/instrumentation/flow-instruments/` - Product detail pages (x8 instrumentation products)
 
 ### Root Hub:
-7. Rebuild `/` as simple hub with 2 tiles (Machinery | Furniture)
+6. Rebuild `/` as simple hub with 2 tiles (Machinery | Furniture)
 
 ### Furniture Domain:
-8. Everything (complete separate website)
+7. Everything (complete separate website)
 
 ---
 
@@ -68,8 +98,10 @@ src/layouts/
 
 ### Machinery Navigation: ✅ WORKING CORRECTLY
 - Home highlighted on `/machinery/`
-- Products highlighted on `/machinery/products/` and all product pages
+- Products highlighted on `/machinery/products/`, `/machinery/electrical/`, `/machinery/automation/`, `/machinery/instrumentation/`
 - All links go to correct machinery domain paths
+- Works correctly on both localhost and GitHub Pages
+- Path helpers properly handle base URL for production deployment
 
 ### Root Navigation:
 - Currently uses BaseLayout (old shared header)
@@ -79,12 +111,13 @@ src/layouts/
 
 ## 📊 Progress Summary
 
-**Machinery Domain:** 30% complete
+**Machinery Domain:** 75% complete
 - ✅ Homepage (landing)
 - ✅ Products listing
-- ❌ Category pages (0/3)
-- ❌ Product pages (0/24)
-- ❌ About/Contact pages
+- ✅ Category pages (3/3)
+- ✅ About Us page
+- ✅ Contact page
+- ❌ Product detail pages (0/24)
 
 **Furniture Domain:** 0% complete
 
@@ -94,26 +127,46 @@ src/layouts/
 
 ## 🎯 Next Steps (In Order)
 
-1. Build `/machinery/electrical/` category page
-2. Build product detail page template
-3. Create all 24 product pages
-4. Create About and Contact pages for machinery
-5. Rebuild root `/` as simple hub
-6. Start furniture domain
+1. Build product detail page template (e.g., `/machinery/electrical/vfd/`)
+2. Create all 24 product detail pages
+3. Rebuild root `/` as simple hub
+4. Start furniture domain
 
 ---
 
-## 🤦 What Went Wrong
+## 🚀 Recent Accomplishments (2025-11-25)
 
-I didn't read architecture.md properly at the start, which had ALL of this clearly documented:
-- Multi-vertical strategy
-- Each section as independent entity
-- Hub homepage concept
-- Separate components per section
+### GitHub Pages Deployment Fixes
+- Fixed base URL configuration in `astro.config.mjs`
+- Added trailing slash to base path to prevent path concatenation issues
+- Updated all image paths to remove leading slashes
+- Converted hero background images from Tailwind classes to inline styles
+- Fixed navigation highlighting to work with base URL
+- Added path helper functions for proper base URL handling
 
-This wasted hours rebuilding things that were explained from the beginning.
+### Category Pages
+- Built all 3 category pages (Electrical, Automation, Instrumentation)
+- Each shows 8 product cards with images
+- Hero sections with category descriptions
+- Brands sections with trusted manufacturers
+- Proper breadcrumbs navigation
+
+### Build Verification
+- ✅ All 8 pages build successfully
+- ✅ CSS file generated and linked correctly
+- ✅ All navigation links use correct format
+- ✅ All images have correct paths
+- ✅ Navigation highlighting works on all pages
+- ✅ Logo displays on all pages
+
+### About Us & Contact Pages
+- ✅ Created `/machinery/about/` with company info, mission, vision, values
+- ✅ Created `/machinery/contact/` with phone, WhatsApp, email CTAs
+- ✅ Contact info from PDF: +971 55 427 4256, wadialsadaf.sales@gmail.com
+- ✅ Navigation highlighting works on both pages
 
 ---
 
-**Current Date:** 2025-11-24
-**Last Update:** After fixing machinery domain navigation
+**Current Date:** 2025-11-25
+**Last Update:** After completing About Us and Contact pages
+**Deployment Status:** ✅ Ready for https://hmdbhoira.github.io/wadi-al-sadaf/

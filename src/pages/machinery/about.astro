@@ -1,0 +1,239 @@
+---
+// About Us page for Machinery domain
+import MachineryLayout from '../../layouts/MachineryLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const baseUrl = import.meta.env.BASE_URL || '/';
+
+const breadcrumbs = [
+  { label: 'Home', href: `${baseUrl}machinery/` },
+  { label: 'About Us' },
+];
+
+const companyInfo = {
+  name: 'Wadi Al Sadaf',
+  fullName: 'Wadi Al Sadaf General Trading LLC',
+  mission: 'Our Mission is to help our Customers power their industries with proven solutions that are cost effective, efficient and environmentally friendly while continuously fostering a culture of empowerment and ensuring that we live and breathe our core values.',
+  vision: 'Our Vision is to become the first choice of our customers in the field of industrial power needs, through exceptional business performance and innovation in technology.',
+};
+
+const industries = [
+  'Sugar', 'Pharma', 'Cement', 'Paper', 'Food & Beverage',
+  'Metals & Mining', 'Dairy', 'Poultry', 'Gas', 'BEV'
+];
+
+const values = [
+  {
+    title: 'Quality Assurance',
+    description: 'Stringent quality control processes ensure every product meets the highest industry standards.',
+    icon: '✓'
+  },
+  {
+    title: 'Latest Technologies',
+    description: 'We incorporate cutting-edge technologies to provide innovative solutions for modern industrial challenges.',
+    icon: '⚡'
+  },
+  {
+    title: 'Timely Deliveries',
+    description: 'Our efficient processes and dedicated team ensure your orders arrive on schedule, every time.',
+    icon: '📦'
+  },
+  {
+    title: 'Long-term Relationships',
+    description: 'We believe in building lasting partnerships based on transparency, trust, and mutual growth.',
+    icon: '🤝'
+  },
+  {
+    title: 'Expert Support',
+    description: 'Our experienced team provides technical guidance and support throughout your project lifecycle.',
+    icon: '💡'
+  },
+  {
+    title: 'Responsiveness',
+    description: 'Quick response times and dedicated communication channels keep your projects moving forward.',
+    icon: '📞'
+  }
+];
+---
+
+<MachineryLayout
+  title="About Us"
+  description="Learn about Wadi Al Sadaf - decades of experience providing industrial automation, electrical, and instrumentation solutions across multiple industries."
+>
+  <!-- Hero Section -->
+  <section class="relative bg-black pt-8 pb-24 md:pt-12 md:pb-32">
+    <div class="absolute inset-0 opacity-40">
+      <div class="absolute inset-0 bg-cover bg-center" style={`background-image: url('${baseUrl}images/machinery/automation/automation-hero.png')`}></div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-br from-black/60 to-brand-gold-dark/60"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="text-center max-w-4xl mx-auto mt-8">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-2xl">
+          About Us
+        </h1>
+        <p class="text-xl md:text-2xl text-white mb-8 drop-shadow-xl">
+          Your trusted partner in industrial solutions with decades of experience
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Overview -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-[var(--brand-black)] mb-6">
+              Who We Are
+            </h2>
+            <div class="w-20 h-1 bg-[var(--brand-gold)] mb-8"></div>
+
+            <p class="text-lg text-[var(--brand-gray)] leading-relaxed mb-6">
+              <strong class="text-[var(--brand-black)]">Wadi Al Sadaf</strong> is formed by a group of enthusiastic professionals having decades of experience in Industries like Sugar, Pharma, Cement, Paper, Food and Beverage, Metals & Mining and more.
+            </p>
+
+            <p class="text-lg text-[var(--brand-gray)] leading-relaxed mb-6">
+              We provide a level of service that will exceed the expectations of our clients, maintaining the highest level of quality. We instill confidence with all parties by professionally managing all aspects of each and every project.
+            </p>
+
+            <p class="text-lg text-[var(--brand-gray)] leading-relaxed">
+              <strong class="text-[var(--brand-black)]">Wadi Al Sadaf</strong> believes in long-term relationships, transparency and responsiveness.
+            </p>
+          </div>
+
+          <div class="relative">
+            <div class="bg-[var(--brand-cream)] rounded-2xl p-8 shadow-xl">
+              <img
+                src={`${baseUrl}images/logo.jpeg`}
+                alt="Wadi Al Sadaf"
+                class="w-48 h-48 object-contain mx-auto rounded-full shadow-lg border-4 border-[var(--brand-gold)]"
+              />
+              <div class="text-center mt-6">
+                <h3 class="text-2xl font-bold text-[var(--brand-black)]">{companyInfo.fullName}</h3>
+                <p class="text-[var(--brand-gold-dark)] mt-2">Industrial Solutions Provider</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-[var(--brand-black)] mb-4">Our Purpose</h2>
+          <div class="w-24 h-1 bg-[var(--brand-gold)] mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Mission -->
+          <div class="bg-white p-10 rounded-xl shadow-lg border-l-4 border-[var(--brand-gold)] hover:shadow-xl transition-shadow">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 bg-[var(--brand-gold)] rounded-xl flex items-center justify-center text-white text-2xl font-bold shadow-md">
+                M
+              </div>
+              <h3 class="text-3xl font-bold text-[var(--brand-black)]">Our Mission</h3>
+            </div>
+            <p class="text-[var(--brand-gray)] leading-relaxed text-lg">
+              {companyInfo.mission}
+            </p>
+          </div>
+
+          <!-- Vision -->
+          <div class="bg-white p-10 rounded-xl shadow-lg border-l-4 border-[var(--brand-gold)] hover:shadow-xl transition-shadow">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 bg-[var(--brand-gold)] rounded-xl flex items-center justify-center text-white text-2xl font-bold shadow-md">
+                V
+              </div>
+              <h3 class="text-3xl font-bold text-[var(--brand-black)]">Our Vision</h3>
+            </div>
+            <p class="text-[var(--brand-gray)] leading-relaxed text-lg">
+              {companyInfo.vision}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values / Why Choose Us -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-[var(--brand-black)] mb-4">Why Choose Us</h2>
+          <div class="w-24 h-1 bg-[var(--brand-gold)] mx-auto mb-6"></div>
+          <p class="text-lg text-[var(--brand-gray)] max-w-2xl mx-auto">
+            Our commitment to excellence sets us apart in the industry
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {values.map((value) => (
+            <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-all hover:-translate-y-1 border border-gray-100">
+              <div class="w-16 h-16 bg-[var(--brand-cream)] rounded-full flex items-center justify-center mb-6 border-2 border-[var(--brand-gold)]">
+                <span class="text-3xl">{value.icon}</span>
+              </div>
+              <h4 class="text-xl font-bold text-[var(--brand-black)] mb-3">{value.title}</h4>
+              <p class="text-[var(--brand-gray)] leading-relaxed">{value.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries We Serve -->
+  <section class="py-20 bg-gradient-to-b from-[var(--brand-cream)] to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-[var(--brand-black)] mb-4">Industries We Serve</h2>
+          <div class="w-24 h-1 bg-[var(--brand-gold)] mx-auto mb-6"></div>
+          <p class="text-lg text-[var(--brand-gray)]">Decades of experience across diverse industrial sectors</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {industries.map((industry) => (
+            <div class="bg-white text-[var(--brand-gold-dark)] px-6 py-5 rounded-lg font-semibold text-center shadow-md border-2 border-[var(--brand-gold)]/20 hover:border-[var(--brand-gold)] hover:shadow-lg transition-all">
+              {industry}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="relative bg-[var(--brand-gold)] py-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <h2 class="text-4xl font-bold text-white mb-6">Ready to Work Together?</h2>
+      <p class="text-xl text-white mb-10 max-w-2xl mx-auto leading-relaxed">
+        Let's discuss how we can help power your industrial operations with our proven solutions.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href={`${baseUrl}machinery/contact/`}
+          class="bg-white text-[var(--brand-gold)] px-10 py-4 rounded-lg hover:bg-[var(--brand-cream)] transition-all font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+        >
+          Contact Us
+        </a>
+        <a
+          href={`${baseUrl}machinery/products/`}
+          class="bg-[var(--brand-gold-dark)] text-white px-10 py-4 rounded-lg hover:bg-[var(--brand-black)] transition-all font-semibold text-lg border-2 border-white shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+        >
+          View Products
+        </a>
+      </div>
+    </div>
+  </section>
+</MachineryLayout>

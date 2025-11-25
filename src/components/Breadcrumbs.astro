@@ -14,11 +14,11 @@ const { items } = Astro.props;
         <li class="flex items-center gap-2">
           {index > 0 && <span class="text-white/60">/</span>}
           {item.href ? (
-            <a href={item.href} class="text-white/80 hover:text-[var(--brand-gold-light)] transition-colors">
+            <a href={item.href} class="text-white/70 hover:text-white transition-colors">
               {item.label}
             </a>
           ) : (
-            <span class="text-white">{item.label}</span>
+            <span class="text-[var(--brand-gold)]">{item.label}</span>
           )}
         </li>
       ))

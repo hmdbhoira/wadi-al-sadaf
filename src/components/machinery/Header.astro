@@ -5,12 +5,16 @@ const baseUrl = import.meta.env.BASE_URL || '/';
 
 // Helper function to check if current path matches, accounting for base URL
 const isCurrentPath = (path: string) => {
-  const fullPath = `${baseUrl}${path}`;
+  // Remove leading slash from path if baseUrl already ends with one
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  const fullPath = `${baseUrl}${cleanPath}`;
   return currentPath === fullPath || currentPath === fullPath.replace(/\/$/, '');
 };
 
 const pathStartsWith = (path: string) => {
-  const fullPath = `${baseUrl}${path}`;
+  // Remove leading slash from path if baseUrl already ends with one
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  const fullPath = `${baseUrl}${cleanPath}`;
   return currentPath.startsWith(fullPath);
 };
 ---

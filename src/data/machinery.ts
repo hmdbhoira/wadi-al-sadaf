@@ -175,7 +175,7 @@ export const machineryCategories: Category[] = [
     slug: 'instrumentation',
     heroImage: 'images/machinery/instrumentation/hero.png', // TO BE ADDED
     description: 'Comprehensive instrumentation solutions for flow, level, pressure, and temperature measurement in industrial processes.',
-    brands: ['SIEMENS', 'Rotork', 'WIKA', 'ABB', 'FESTO', 'Honeywell', 'E+H Endress+Hauser', 'Rosemount', 'Emerson', 'Spirax Sarco', 'SMC', 'KROHNE'],
+    brands: ['SIEMENS', 'Rotork', 'WIKA', 'ABB', 'FESTO', 'Honeywell', 'E+H Endress+Hauser', 'Emerson', 'Spirax Sarco', 'SMC', 'KROHNE'],
     products: [
       {
         id: 'flow-instruments',

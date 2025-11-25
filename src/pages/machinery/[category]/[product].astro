@@ -3,6 +3,7 @@
 import MachineryLayout from '../../../layouts/MachineryLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { machineryCategories, getCategoryBySlug, getProductBySlug } from '../../../data/machinery';
+import { brandLogos } from '../../../data/brands';
 
 export async function getStaticPaths() {
   const paths = [];
@@ -138,12 +139,26 @@ const relatedProducts = category.products
             <h2 class="text-2xl font-bold text-[var(--brand-black)] mb-2">Trusted Brands</h2>
             <p class="text-[var(--brand-gray)]">We supply {category.name.toLowerCase()} products from leading manufacturers</p>
           </div>
-          <div class="flex flex-wrap justify-center gap-4">
-            {category.brands.map((brand: string) => (
-              <span class="bg-white text-[var(--brand-gold-dark)] px-6 py-3 rounded-lg font-semibold shadow-md border border-[var(--brand-gold)]/20">
-                {brand}
-              </span>
-            ))}
+          <div class="flex flex-wrap justify-center items-center gap-4">
+            {category.brands.map((brand: string) => {
+              const logo = brandLogos[brand];
+              return logo ? (
+                <div class="bg-white p-4 rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:border-[var(--brand-gold)]/30 transition-all flex items-center justify-center w-32 h-20 group hover:scale-150 hover:z-10">
+                  <img
+                    src={`${baseUrl}${logo}`}
+                    alt={brand}
+                    title={brand}
+                    class="max-h-12 max-w-24 object-contain"
+                  />
+                </div>
+              ) : (
+                <div class="bg-white p-4 rounded-xl shadow-md border border-gray-100 flex items-center justify-center w-32 h-20">
+                  <span class="text-[var(--brand-gold-dark)] font-semibold text-sm text-center">
+                    {brand}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

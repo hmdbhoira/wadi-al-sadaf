@@ -13,52 +13,75 @@ const breadcrumbs = [
 const companyInfo = {
   name: 'Wadi Al Sadaf',
   fullName: 'Wadi Al Sadaf General Trading LLC',
-  mission: 'Our Mission is to help our Customers power their industries with proven solutions that are cost effective, efficient and environmentally friendly while continuously fostering a culture of empowerment and ensuring that we live and breathe our core values.',
-  vision: 'Our Vision is to become the first choice of our customers in the field of industrial power needs, through exceptional business performance and innovation in technology.',
+  mission: 'To help our customers power their industries with proven solutions that are cost effective, efficient and environmentally friendly while continuously fostering a culture of empowerment and ensuring that we live and breathe our core values.',
+  vision: 'To become the first choice of our customers in the field of industrial power needs, through exceptional business performance and innovation in technology.',
 };
 
-const industries = [
-  'Sugar', 'Pharma', 'Cement', 'Paper', 'Food & Beverage',
-  'Metals & Mining', 'Dairy', 'Poultry', 'Gas', 'BEV'
+const expertise = [
+  {
+    industry: 'Sugar Industry',
+    description: 'Process automation, instrumentation for sugar mills, and electrical systems for production lines.'
+  },
+  {
+    industry: 'Pharmaceutical',
+    description: 'Precision instrumentation, cleanroom-compatible automation, and validated control systems.'
+  },
+  {
+    industry: 'Cement & Mining',
+    description: 'Heavy-duty electrical equipment, rugged instrumentation, and industrial automation for harsh environments.'
+  },
+  {
+    industry: 'Food & Beverage',
+    description: 'Hygienic process control, temperature monitoring, and food-grade automation solutions.'
+  },
+  {
+    industry: 'Paper Industry',
+    description: 'Drive systems, process instrumentation, and automation for pulp and paper manufacturing.'
+  },
+  {
+    industry: 'Metals & Mining',
+    description: 'High-power electrical systems, safety instrumentation, and robust automation for metal processing.'
+  }
 ];
 
-const values = [
+const coreValues = [
   {
-    title: 'Quality Assurance',
-    description: 'Stringent quality control processes ensure every product meets the highest industry standards.',
+    title: 'Quality First',
+    description: 'We never compromise on quality. Every product we supply undergoes stringent quality checks to ensure it meets the highest industry standards. Our partnerships with world-leading brands guarantee authentic, reliable equipment.',
     icon: '✓'
   },
   {
-    title: 'Latest Technologies',
-    description: 'We incorporate cutting-edge technologies to provide innovative solutions for modern industrial challenges.',
-    icon: '⚡'
-  },
-  {
-    title: 'Timely Deliveries',
-    description: 'Our efficient processes and dedicated team ensure your orders arrive on schedule, every time.',
-    icon: '📦'
-  },
-  {
-    title: 'Long-term Relationships',
-    description: 'We believe in building lasting partnerships based on transparency, trust, and mutual growth.',
+    title: 'Customer Partnership',
+    description: 'We don\'t just sell products - we build partnerships. Our team works closely with you to understand your specific requirements, challenges, and goals. Your success is our success.',
     icon: '🤝'
   },
   {
-    title: 'Expert Support',
-    description: 'Our experienced team provides technical guidance and support throughout your project lifecycle.',
+    title: 'Technical Excellence',
+    description: 'Our team brings decades of hands-on experience across multiple industries. We provide not just products, but technical guidance, application support, and solutions tailored to your specific needs.',
     icon: '💡'
   },
   {
-    title: 'Responsiveness',
-    description: 'Quick response times and dedicated communication channels keep your projects moving forward.',
-    icon: '📞'
+    title: 'Reliability & Trust',
+    description: 'We deliver what we promise, when we promise. Our commitment to timely delivery and transparent communication has earned us the trust of clients across the UAE and beyond.',
+    icon: '⭐'
   }
+];
+
+const services = [
+  'Product Supply & Sourcing',
+  'Technical Consultation',
+  'Panel Fabrication',
+  'Repairing & Calibration',
+  'Annual Maintenance Contracts',
+  'Control System Projects',
+  'Commissioning Support',
+  'Emergency On-Call Services'
 ];
 ---
 
 <MachineryLayout
   title="About Us"
-  description="Learn about Wadi Al Sadaf - decades of experience providing industrial automation, electrical, and instrumentation solutions across multiple industries."
+  description="Learn about Wadi Al Sadaf - decades of experience providing industrial automation, electrical, and instrumentation solutions across multiple industries in the UAE."
 >
   <!-- Hero Section -->
   <section class="relative bg-black pt-8 pb-24 md:pt-12 md:pb-32">
@@ -73,33 +96,33 @@ const values = [
           About Us
         </h1>
         <p class="text-xl md:text-2xl text-white mb-8 drop-shadow-xl">
-          Your trusted partner in industrial solutions with decades of experience
+          Decades of industrial expertise, powering industries across the UAE
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Company Overview -->
+  <!-- Our Story -->
   <section class="py-20 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 class="text-3xl md:text-4xl font-bold text-[var(--brand-black)] mb-6">
-              Who We Are
+              Our Story
             </h2>
             <div class="w-20 h-1 bg-[var(--brand-gold)] mb-8"></div>
 
             <p class="text-lg text-[var(--brand-gray)] leading-relaxed mb-6">
-              <strong class="text-[var(--brand-black)]">Wadi Al Sadaf</strong> is formed by a group of enthusiastic professionals having decades of experience in Industries like Sugar, Pharma, Cement, Paper, Food and Beverage, Metals & Mining and more.
+              <strong class="text-[var(--brand-black)]">Wadi Al Sadaf General Trading LLC</strong> was founded by a group of passionate industry professionals who saw an opportunity to bring world-class industrial solutions to the UAE market.
             </p>
 
             <p class="text-lg text-[var(--brand-gray)] leading-relaxed mb-6">
-              We provide a level of service that will exceed the expectations of our clients, maintaining the highest level of quality. We instill confidence with all parties by professionally managing all aspects of each and every project.
+              Our founders collectively bring <strong class="text-[var(--brand-black)]">decades of hands-on experience</strong> working in industries ranging from Sugar and Pharmaceuticals to Cement, Paper, Food & Beverage, and Metals & Mining. This deep industry knowledge allows us to truly understand our customers' challenges.
             </p>
 
             <p class="text-lg text-[var(--brand-gray)] leading-relaxed">
-              <strong class="text-[var(--brand-black)]">Wadi Al Sadaf</strong> believes in long-term relationships, transparency and responsiveness.
+              Based in <strong class="text-[var(--brand-black)]">Dubai Industrial City</strong>, we serve clients across the UAE and the broader Middle East region, providing not just products but complete industrial solutions backed by technical expertise.
             </p>
           </div>
 
@@ -112,7 +135,7 @@ const values = [
               />
               <div class="text-center mt-6">
                 <h3 class="text-2xl font-bold text-[var(--brand-black)]">{companyInfo.fullName}</h3>
-                <p class="text-[var(--brand-gold-dark)] mt-2">Industrial Solutions Provider</p>
+                <p class="text-[var(--brand-gold-dark)] mt-2">Dubai Industrial City, UAE</p>
               </div>
             </div>
           </div>
@@ -161,26 +184,30 @@ const values = [
     </div>
   </section>
 
-  <!-- Our Values / Why Choose Us -->
+  <!-- Core Values -->
   <section class="py-20 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-[var(--brand-black)] mb-4">Why Choose Us</h2>
+          <h2 class="text-4xl font-bold text-[var(--brand-black)] mb-4">What We Stand For</h2>
           <div class="w-24 h-1 bg-[var(--brand-gold)] mx-auto mb-6"></div>
           <p class="text-lg text-[var(--brand-gray)] max-w-2xl mx-auto">
-            Our commitment to excellence sets us apart in the industry
+            Our values guide every decision we make and every relationship we build
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {values.map((value) => (
-            <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-all hover:-translate-y-1 border border-gray-100">
-              <div class="w-16 h-16 bg-[var(--brand-cream)] rounded-full flex items-center justify-center mb-6 border-2 border-[var(--brand-gold)]">
-                <span class="text-3xl">{value.icon}</span>
+        <div class="grid md:grid-cols-2 gap-8">
+          {coreValues.map((value) => (
+            <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-all border border-gray-100">
+              <div class="flex items-start gap-4">
+                <div class="w-14 h-14 bg-[var(--brand-cream)] rounded-full flex items-center justify-center border-2 border-[var(--brand-gold)] flex-shrink-0">
+                  <span class="text-2xl">{value.icon}</span>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold text-[var(--brand-black)] mb-3">{value.title}</h4>
+                  <p class="text-[var(--brand-gray)] leading-relaxed">{value.description}</p>
+                </div>
               </div>
-              <h4 class="text-xl font-bold text-[var(--brand-black)] mb-3">{value.title}</h4>
-              <p class="text-[var(--brand-gray)] leading-relaxed">{value.description}</p>
             </div>
           ))}
         </div>
@@ -188,22 +215,61 @@ const values = [
     </div>
   </section>
 
-  <!-- Industries We Serve -->
+  <!-- Industry Expertise -->
   <section class="py-20 bg-gradient-to-b from-[var(--brand-cream)] to-white">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl font-bold text-[var(--brand-black)] mb-4">Industries We Serve</h2>
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-[var(--brand-black)] mb-4">Industry Expertise</h2>
           <div class="w-24 h-1 bg-[var(--brand-gold)] mx-auto mb-6"></div>
-          <p class="text-lg text-[var(--brand-gray)]">Decades of experience across diverse industrial sectors</p>
+          <p class="text-lg text-[var(--brand-gray)] max-w-2xl mx-auto">
+            Our team's experience spans across diverse industrial sectors
+          </p>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {industries.map((industry) => (
-            <div class="bg-white text-[var(--brand-gold-dark)] px-6 py-5 rounded-lg font-semibold text-center shadow-md border-2 border-[var(--brand-gold)]/20 hover:border-[var(--brand-gold)] hover:shadow-lg transition-all">
-              {industry}
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {expertise.map((item) => (
+            <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all border-t-4 border-[var(--brand-gold)]">
+              <h4 class="text-lg font-bold text-[var(--brand-black)] mb-2">{item.industry}</h4>
+              <p class="text-[var(--brand-gray)] text-sm leading-relaxed">{item.description}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Services -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-[var(--brand-black)] mb-6">
+              Beyond Products
+            </h2>
+            <div class="w-20 h-1 bg-[var(--brand-gold)] mb-8"></div>
+
+            <p class="text-lg text-[var(--brand-gray)] leading-relaxed mb-6">
+              We're more than just a trading company. Our comprehensive service offerings ensure you have support at every stage of your project - from initial consultation to ongoing maintenance.
+            </p>
+
+            <p class="text-lg text-[var(--brand-gray)] leading-relaxed">
+              Whether you need emergency repairs, calibration services, or complete control system projects, our experienced team is ready to help.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-xl">
+            <h4 class="font-bold text-[var(--brand-black)] mb-6 text-lg">Our Services Include:</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {services.map((service) => (
+                <div class="flex items-center gap-3">
+                  <span class="text-[var(--brand-gold)] text-lg">✓</span>
+                  <span class="text-[var(--brand-gray)]">{service}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -216,9 +282,9 @@ const values = [
       <div class="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
     </div>
     <div class="container mx-auto px-4 text-center relative z-10">
-      <h2 class="text-4xl font-bold text-white mb-6">Ready to Work Together?</h2>
+      <h2 class="text-4xl font-bold text-white mb-6">Let's Work Together</h2>
       <p class="text-xl text-white mb-10 max-w-2xl mx-auto leading-relaxed">
-        Let's discuss how we can help power your industrial operations with our proven solutions.
+        Ready to discuss your industrial needs? Our team is here to help you find the right solutions.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a

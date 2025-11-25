@@ -3,18 +3,11 @@
 import MachineryLayout from '../../layouts/MachineryLayout.astro';
 
 const baseUrl = import.meta.env.BASE_URL || '/';
-
-const companyInfo = {
-  name: 'Wadi Al Sadaf',
-  tagline: 'Your Trusted Partner in Industrial Solutions',
-  mission: 'Our Mission is to help our Customers power their industries with proven solutions that are cost effective, efficient and environmentally friendly while continuously fostering a culture of empowerment and ensuring that we live and breathe our core values.',
-  vision: 'Our Vision is to become the first choice of our customers in the field of industrial power needs, through exceptional business performance and innovation in technology.',
-};
 ---
 
 <MachineryLayout
   title="Home"
-  description="Wadi Al Sadaf Machinery - Your trusted partner in industrial automation, electrical, and instrumentation solutions. Years of experience across multiple industries."
+  description="Wadi Al Sadaf Machinery - Your trusted partner in industrial automation, electrical, and instrumentation solutions. Serving Sugar, Pharma, Cement, Food & Beverage, and more."
 >
   <!-- Hero Banner -->
   <section class="relative bg-black py-32 md:py-40 overflow-hidden">
@@ -28,11 +21,11 @@ const companyInfo = {
         <img src={`${baseUrl}images/logo.jpeg`} alt="Wadi Al Sadaf" class="h-32 w-32 object-contain mx-auto mb-8 rounded-full shadow-2xl border-4 border-[var(--brand-gold)]" />
 
         <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-2xl">
-          {companyInfo.name}
+          Wadi Al Sadaf
         </h1>
 
         <p class="text-2xl md:text-3xl text-white mb-12 font-medium drop-shadow-xl">
-          {companyInfo.tagline}
+          Your Trusted Partner in Industrial Solutions
         </p>
 
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
@@ -53,64 +46,55 @@ const companyInfo = {
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- What We Offer -->
   <section class="py-20 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-[var(--brand-black)] mb-4">About Us</h2>
-          <div class="w-24 h-1 bg-[var(--brand-gold)] mx-auto"></div>
-        </div>
-
-        <div class="grid md:grid-cols-1 gap-12">
-          <div class="bg-gray-50 p-8 rounded-xl shadow-md border-l-4 border-[var(--brand-gold)]">
-            <p class="text-lg text-[var(--brand-gray)] leading-relaxed">
-              Wadi Al Sadaf is formed by a group of enthusiastic professionals having years of experience in Industries like Sugar, Pharma, Cement, Paper, Food and Beverage, Metals & Mining etc.
-            </p>
-            <p class="text-lg text-[var(--brand-gray)] leading-relaxed mt-4">
-              Wadi Al Sadaf provide a level of service that will exceed the expectations of our clients, maintain the highest level of quality. Instill confidence with all parties by professionally managing all aspects of each and every project.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mission & Vision -->
-  <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-        <!-- Mission -->
-        <div class="bg-white p-10 rounded-xl shadow-lg border-t-4 border-[var(--brand-gold)]">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-12 h-12 bg-[var(--brand-gold)] rounded-lg flex items-center justify-center text-white text-2xl font-bold">
-              M
-            </div>
-            <h3 class="text-3xl font-bold text-[var(--brand-black)]">Our Mission</h3>
-          </div>
-          <p class="text-[var(--brand-gray)] leading-relaxed text-lg">
-            {companyInfo.mission}
+          <h2 class="text-4xl font-bold text-[var(--brand-black)] mb-4">What We Offer</h2>
+          <div class="w-24 h-1 bg-[var(--brand-gold)] mx-auto mb-6"></div>
+          <p class="text-lg text-[var(--brand-gray)] max-w-3xl mx-auto">
+            Complete industrial solutions from world-leading brands - electrical systems, automation, and precision instrumentation for your industrial needs.
           </p>
         </div>
 
-        <!-- Vision -->
-        <div class="bg-white p-10 rounded-xl shadow-lg border-t-4 border-[var(--brand-gold)]">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-12 h-12 bg-[var(--brand-gold)] rounded-lg flex items-center justify-center text-white text-2xl font-bold">
-              V
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Electrical -->
+          <a href={`${baseUrl}machinery/electrical/`} class="group bg-gray-50 p-8 rounded-xl hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-transparent hover:border-[var(--brand-gold)]">
+            <div class="w-16 h-16 bg-[var(--brand-gold)] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span class="text-3xl text-white">⚡</span>
             </div>
-            <h3 class="text-3xl font-bold text-[var(--brand-black)]">Our Vision</h3>
-          </div>
-          <p class="text-[var(--brand-gray)] leading-relaxed text-lg">
-            {companyInfo.vision}
-          </p>
+            <h3 class="text-2xl font-bold text-[var(--brand-black)] mb-3">Electrical</h3>
+            <p class="text-[var(--brand-gray)] mb-4">VFDs, Motors, Circuit Breakers, Transformers, Cables, and Panel Components from trusted manufacturers.</p>
+            <span class="text-[var(--brand-gold)] font-semibold group-hover:text-[var(--brand-gold-dark)]">View Products →</span>
+          </a>
+
+          <!-- Automation -->
+          <a href={`${baseUrl}machinery/automation/`} class="group bg-gray-50 p-8 rounded-xl hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-transparent hover:border-[var(--brand-gold)]">
+            <div class="w-16 h-16 bg-[var(--brand-gold)] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span class="text-3xl text-white">🤖</span>
+            </div>
+            <h3 class="text-2xl font-bold text-[var(--brand-black)] mb-3">Automation</h3>
+            <p class="text-[var(--brand-gray)] mb-4">PLCs, HMIs, Industrial PCs, Smart Sensors, Temperature Controllers, and Robotics solutions.</p>
+            <span class="text-[var(--brand-gold)] font-semibold group-hover:text-[var(--brand-gold-dark)]">View Products →</span>
+          </a>
+
+          <!-- Instrumentation -->
+          <a href={`${baseUrl}machinery/instrumentation/`} class="group bg-gray-50 p-8 rounded-xl hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-transparent hover:border-[var(--brand-gold)]">
+            <div class="w-16 h-16 bg-[var(--brand-gold)] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span class="text-3xl text-white">📊</span>
+            </div>
+            <h3 class="text-2xl font-bold text-[var(--brand-black)] mb-3">Instrumentation</h3>
+            <p class="text-[var(--brand-gray)] mb-4">Flow, Level, Pressure, and Temperature instruments, Actuators, Valves, and Gas Analytics.</p>
+            <span class="text-[var(--brand-gold)] font-semibold group-hover:text-[var(--brand-gold-dark)]">View Products →</span>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Why Choose Us -->
-  <section class="py-20 bg-white">
+  <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
@@ -124,31 +108,31 @@ const companyInfo = {
               <span class="text-3xl">✓</span>
             </div>
             <h4 class="text-xl font-bold text-[var(--brand-black)] mb-2">Quality Assurance</h4>
-            <p class="text-[var(--brand-gray)]">Experienced and dedicated team with stringent quality control</p>
+            <p class="text-[var(--brand-gray)]">Stringent quality control on every product</p>
           </div>
 
           <div class="text-center">
             <div class="w-20 h-20 bg-[var(--brand-cream)] rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-[var(--brand-gold)]">
-              <span class="text-3xl">⚡</span>
+              <span class="text-3xl">🚚</span>
             </div>
             <h4 class="text-xl font-bold text-[var(--brand-black)] mb-2">Timely Delivery</h4>
-            <p class="text-[var(--brand-gray)]">Latest technologies and efficient delivery processes</p>
+            <p class="text-[var(--brand-gray)]">Efficient processes, on-time every time</p>
           </div>
 
           <div class="text-center">
             <div class="w-20 h-20 bg-[var(--brand-cream)] rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-[var(--brand-gold)]">
-              <span class="text-3xl">🤝</span>
+              <span class="text-3xl">💡</span>
             </div>
-            <h4 class="text-xl font-bold text-[var(--brand-black)] mb-2">Long-term Relationships</h4>
-            <p class="text-[var(--brand-gray)]">Transparency and responsiveness in all our dealings</p>
+            <h4 class="text-xl font-bold text-[var(--brand-black)] mb-2">Expert Support</h4>
+            <p class="text-[var(--brand-gray)]">Technical guidance throughout your project</p>
           </div>
 
           <div class="text-center">
             <div class="w-20 h-20 bg-[var(--brand-cream)] rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-[var(--brand-gold)]">
-              <span class="text-3xl">⭐</span>
+              <span class="text-3xl">🏭</span>
             </div>
-            <h4 class="text-xl font-bold text-[var(--brand-black)] mb-2">Trusted Partner</h4>
-            <p class="text-[var(--brand-gray)]">Years of experience across multiple industries</p>
+            <h4 class="text-xl font-bold text-[var(--brand-black)] mb-2">Industry Experience</h4>
+            <p class="text-[var(--brand-gray)]">Decades across multiple sectors</p>
           </div>
         </div>
       </div>
@@ -156,18 +140,17 @@ const companyInfo = {
   </section>
 
   <!-- Industries We Serve -->
-  <section class="py-20 bg-gradient-to-b from-brand-cream to-white">
+  <section class="py-20 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
           <h2 class="text-4xl font-bold text-[var(--brand-black)] mb-4">Industries We Serve</h2>
           <div class="w-24 h-1 bg-[var(--brand-gold)] mx-auto mb-6"></div>
-          <p class="text-lg text-[var(--brand-gray)]">Years of experience across diverse industrial sectors</p>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {['Sugar', 'Pharma', 'Cement', 'Paper', 'Food & Beverage', 'Metals & Mining', 'Dairy', 'Poultry', 'Gas', 'BEV'].map((industry) => (
-            <div class="bg-white text-[var(--brand-gold-dark)] px-6 py-4 rounded-lg font-semibold text-center shadow-md border-2 border-[var(--brand-gold)]/20 hover:border-[var(--brand-gold)] hover:shadow-lg transition-all">
+            <div class="bg-[var(--brand-cream)] text-[var(--brand-gold-dark)] px-6 py-4 rounded-lg font-semibold text-center shadow-md border-2 border-[var(--brand-gold)]/20 hover:border-[var(--brand-gold)] hover:shadow-lg transition-all">
               {industry}
             </div>
           ))}
@@ -185,18 +168,18 @@ const companyInfo = {
     <div class="container mx-auto px-4 text-center relative z-10">
       <h2 class="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
       <p class="text-xl text-white mb-10 max-w-2xl mx-auto leading-relaxed">
-        Contact our expert technical team for customized solutions tailored to your industrial needs.
+        Contact our expert team for customized solutions tailored to your industrial needs.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href={`${baseUrl}machinery/products/`}
           class="bg-white text-[var(--brand-gold)] px-10 py-4 rounded-lg hover:bg-[var(--brand-cream)] transition-all font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
         >
-          View Products
+          View All Products
         </a>
         <a
           href="tel:+971554274256"
-          class="bg-[var(--brand-gold-dark)] text-white px-10 py-4 rounded-lg hover:bg-[var(--brand-black)] transition-all font-semibold text-lg border-3 border-white shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+          class="bg-[var(--brand-gold-dark)] text-white px-10 py-4 rounded-lg hover:bg-[var(--brand-black)] transition-all font-semibold text-lg border-2 border-white shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
         >
           📱 +971 55 427 4256
         </a>

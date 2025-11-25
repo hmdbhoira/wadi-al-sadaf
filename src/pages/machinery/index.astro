@@ -2,6 +2,8 @@
 // Machinery LANDING PAGE (homepage of machinery domain)
 import MachineryLayout from '../../layouts/MachineryLayout.astro';
 
+const baseUrl = import.meta.env.BASE_URL || '/';
+
 const companyInfo = {
   name: 'Wadi Al Sadaf',
   tagline: 'Your Trusted Partner in Industrial Solutions',
@@ -12,18 +14,18 @@ const companyInfo = {
 
 <MachineryLayout
   title="Home"
-  description="Wadi Al Sadaf Machinery - Your trusted partner in industrial automation, electrical, and instrumentation solutions. Decades of experience across multiple industries."
+  description="Wadi Al Sadaf Machinery - Your trusted partner in industrial automation, electrical, and instrumentation solutions. Years of experience across multiple industries."
 >
   <!-- Hero Banner -->
   <section class="relative bg-black py-32 md:py-40 overflow-hidden">
     <div class="absolute inset-0 opacity-40">
-      <div class="absolute inset-0 bg-[url('/images/machinery/electrical/hero.png')] bg-cover bg-center"></div>
+      <div class="absolute inset-0 bg-cover bg-center" style={`background-image: url('${baseUrl}images/machinery/electrical/hero.png')`}></div>
     </div>
     <div class="absolute inset-0 bg-gradient-to-br from-black/60 to-brand-gold-dark/60"></div>
 
     <div class="container mx-auto px-4 relative z-10">
       <div class="max-w-5xl mx-auto text-center">
-        <img src="/images/logo.jpeg" alt="Wadi Al Sadaf" class="h-32 w-32 object-contain mx-auto mb-8 rounded-full shadow-2xl border-4 border-[var(--brand-gold)]" />
+        <img src={`${baseUrl}images/logo.jpeg`} alt="Wadi Al Sadaf" class="h-32 w-32 object-contain mx-auto mb-8 rounded-full shadow-2xl border-4 border-[var(--brand-gold)]" />
 
         <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-2xl">
           {companyInfo.name}
@@ -35,13 +37,13 @@ const companyInfo = {
 
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
           <a
-            href="/machinery/products/"
+            href={`${baseUrl}machinery/products/`}
             class="bg-[var(--brand-gold)] text-white px-10 py-5 rounded-lg hover:bg-[var(--brand-gold-light)] transition-all font-bold text-xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 hover:scale-105"
           >
             Browse Products
           </a>
           <a
-            href="/contact/"
+            href={`${baseUrl}contact/`}
             class="bg-transparent text-white px-10 py-5 rounded-lg hover:bg-white/10 transition-all font-bold text-xl border-3 border-white shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 hover:scale-105"
           >
             Contact Us
@@ -63,7 +65,7 @@ const companyInfo = {
         <div class="grid md:grid-cols-1 gap-12">
           <div class="bg-gray-50 p-8 rounded-xl shadow-md border-l-4 border-[var(--brand-gold)]">
             <p class="text-lg text-[var(--brand-gray)] leading-relaxed">
-              Wadi Al Sadaf is formed by a group of enthusiastic professionals having decades of experience in Industries like Sugar, Pharma, Cement, Paper, Food and Beverage, Metals & Mining etc.
+              Wadi Al Sadaf is formed by a group of enthusiastic professionals having years of experience in Industries like Sugar, Pharma, Cement, Paper, Food and Beverage, Metals & Mining etc.
             </p>
             <p class="text-lg text-[var(--brand-gray)] leading-relaxed mt-4">
               Wadi Al Sadaf provide a level of service that will exceed the expectations of our clients, maintain the highest level of quality. Instill confidence with all parties by professionally managing all aspects of each and every project.
@@ -146,7 +148,7 @@ const companyInfo = {
               <span class="text-3xl">⭐</span>
             </div>
             <h4 class="text-xl font-bold text-[var(--brand-black)] mb-2">Trusted Partner</h4>
-            <p class="text-[var(--brand-gray)]">Decades of experience across multiple industries</p>
+            <p class="text-[var(--brand-gray)]">Years of experience across multiple industries</p>
           </div>
         </div>
       </div>
@@ -160,7 +162,7 @@ const companyInfo = {
         <div class="text-center mb-12">
           <h2 class="text-4xl font-bold text-[var(--brand-black)] mb-4">Industries We Serve</h2>
           <div class="w-24 h-1 bg-[var(--brand-gold)] mx-auto mb-6"></div>
-          <p class="text-lg text-[var(--brand-gray)]">Decades of experience across diverse industrial sectors</p>
+          <p class="text-lg text-[var(--brand-gray)]">Years of experience across diverse industrial sectors</p>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -187,7 +189,7 @@ const companyInfo = {
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
-          href="/machinery/products/"
+          href={`${baseUrl}machinery/products/`}
           class="bg-white text-[var(--brand-gold)] px-10 py-4 rounded-lg hover:bg-[var(--brand-cream)] transition-all font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
         >
           View Products

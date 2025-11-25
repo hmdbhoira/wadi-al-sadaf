@@ -4,8 +4,10 @@ import MachineryLayout from '../../../layouts/MachineryLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { machineryCategories } from '../../../data/machinery';
 
+const baseUrl = import.meta.env.BASE_URL || '/';
+
 const breadcrumbs = [
-  { label: 'Home', href: '/machinery/' },
+  { label: 'Home', href: `${baseUrl}machinery/` },
   { label: 'Products' },
 ];
 ---
@@ -15,9 +17,9 @@ const breadcrumbs = [
   description="Complete range of electrical, automation, and instrumentation products for industrial applications. Trusted brands including SIEMENS, ABB, Schneider Electric, and more."
 >
   <!-- Hero Section -->
-  <section class="relative bg-black py-24 md:py-32">
+  <section class="relative bg-black pt-8 pb-24 md:pt-12 md:pb-32">
     <div class="absolute inset-0 opacity-40">
-      <div class="absolute inset-0 bg-[url('/images/machinery/electrical/hero.png')] bg-cover bg-center"></div>
+      <div class="absolute inset-0 bg-cover bg-center" style={`background-image: url('${baseUrl}images/machinery/electrical/hero.png')`}></div>
     </div>
     <div class="absolute inset-0 bg-gradient-to-br from-black/60 to-brand-gold-dark/60"></div>
     <div class="container mx-auto px-4 relative z-10">
@@ -29,32 +31,12 @@ const breadcrumbs = [
         <p class="text-xl md:text-2xl text-white mb-8 drop-shadow-xl">
           Comprehensive industrial automation, electrical, and instrumentation products from world-leading brands.
         </p>
-        <p class="text-lg text-white mb-8 drop-shadow-lg">
-          Serving industries including Sugar, Pharma, Cement, Paper, Food & Beverage, Metals & Mining.
-        </p>
         <a
           href="#categories"
           class="inline-block bg-[var(--brand-gold)] text-white px-8 py-4 rounded-lg hover:bg-[var(--brand-gold-light)] transition-all font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1"
         >
           Browse Categories
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Industries Section -->
-  <section class="py-12 bg-white border-y border-gray-200">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-8">
-        <h3 class="text-2xl font-bold text-[var(--brand-black)] mb-3">Serving Multiple Industries</h3>
-        <p class="text-[var(--brand-gray)]">Decades of experience across diverse industrial sectors</p>
-      </div>
-      <div class="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
-        {['Sugar', 'Pharma', 'Cement', 'Paper', 'Food & Beverage', 'Metals & Mining', 'Dairy', 'Poultry', 'Gas'].map((industry) => (
-          <span class="bg-[var(--brand-cream)] text-[var(--brand-gold-dark)] px-6 py-3 rounded-lg font-medium text-sm shadow-sm border border-[var(--brand-gold)]/20">
-            {industry}
-          </span>
-        ))}
       </div>
     </div>
   </section>
@@ -73,13 +55,13 @@ const breadcrumbs = [
         {
           machineryCategories.map((category) => (
             <a
-              href={`/machinery/${category.slug}/`}
+              href={`${baseUrl}machinery/${category.slug}/`}
               class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-gray-200 hover:border-[var(--brand-gold)] transform hover:-translate-y-1"
             >
               <!-- Category Image -->
               <div class="relative h-72 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                 <img
-                  src={category.heroImage}
+                  src={`${baseUrl}${category.heroImage}`}
                   alt={category.name}
                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -135,6 +117,23 @@ const breadcrumbs = [
     </div>
   </section>
 
+  <!-- Industries Section -->
+  <section class="py-12 bg-white border-y border-gray-200">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl font-bold text-[var(--brand-black)] mb-3">Serving Multiple Industries</h3>
+        <p class="text-[var(--brand-gray)]">Years of experience across diverse industrial sectors</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+        {['Sugar', 'Pharma', 'Cement', 'Paper', 'Food & Beverage', 'Metals & Mining', 'Dairy', 'Poultry', 'Gas'].map((industry) => (
+          <span class="bg-[var(--brand-cream)] text-[var(--brand-gold-dark)] px-6 py-3 rounded-lg font-medium text-sm shadow-sm border border-[var(--brand-gold)]/20">
+            {industry}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section class="relative bg-[var(--brand-gold)] py-20 overflow-hidden">
     <div class="absolute inset-0 opacity-10">
@@ -149,7 +148,7 @@ const breadcrumbs = [
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
-          href="/contact/"
+          href={`${baseUrl}contact/`}
           class="bg-white text-[var(--brand-gold)] px-10 py-4 rounded-lg hover:bg-[var(--brand-cream)] transition-all font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
         >
           Contact Us

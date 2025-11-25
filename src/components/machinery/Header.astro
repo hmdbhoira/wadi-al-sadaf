@@ -1,6 +1,7 @@
 ---
 // Machinery domain header - Home links to /machinery/
 const currentPath = Astro.url.pathname;
+const baseUrl = import.meta.env.BASE_URL || '/';
 ---
 
 <header class="bg-[var(--brand-navy)] shadow-lg sticky top-0 z-50 border-b-4 border-[var(--brand-gold)]">
@@ -25,8 +26,8 @@ const currentPath = Astro.url.pathname;
     <nav class="py-4">
       <div class="flex items-center justify-between">
         <!-- Logo -->
-        <a href="/machinery/" class="flex items-center gap-3 hover:opacity-90 transition-opacity">
-          <img src="/images/logo.jpeg" alt="Wadi Al Sadaf" class="h-16 w-16 object-contain rounded-full border-2 border-[var(--brand-gold)] shadow-lg" />
+        <a href={`${baseUrl}machinery/`} class="flex items-center gap-3 hover:opacity-90 transition-opacity">
+          <img src={`${baseUrl}images/logo.jpeg`} alt="Wadi Al Sadaf" class="h-16 w-16 object-contain rounded-full border-2 border-[var(--brand-gold)] shadow-lg" />
           <div>
             <h1 class="text-xl font-bold text-white">Wadi Al Sadaf</h1>
             <p class="text-xs text-[var(--brand-gold-light)] font-medium">Machinery Division</p>
@@ -36,31 +37,31 @@ const currentPath = Astro.url.pathname;
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center gap-6">
           <a
-            href="/machinery/"
+            href={`${baseUrl}machinery/`}
             class={`transition-all font-semibold ${currentPath === '/machinery/' || currentPath === '/machinery' ? 'text-[var(--brand-gold-light)] border-b-2 border-[var(--brand-gold-light)] pb-1' : 'text-gray-300 hover:text-[var(--brand-gold-light)]'}`}
           >
             Home
           </a>
           <a
-            href="/machinery/products/"
+            href={`${baseUrl}machinery/products/`}
             class={`transition-all font-semibold ${currentPath.startsWith('/machinery/products') || currentPath.startsWith('/machinery/electrical') || currentPath.startsWith('/machinery/automation') || currentPath.startsWith('/machinery/instrumentation') ? 'text-[var(--brand-gold-light)] border-b-2 border-[var(--brand-gold-light)] pb-1' : 'text-gray-300 hover:text-[var(--brand-gold-light)]'}`}
           >
             Products
           </a>
           <a
-            href="/machinery/about/"
+            href={`${baseUrl}machinery/about/`}
             class={`transition-all font-semibold ${currentPath === '/machinery/about/' ? 'text-[var(--brand-gold-light)] border-b-2 border-[var(--brand-gold-light)] pb-1' : 'text-gray-300 hover:text-[var(--brand-gold-light)]'}`}
           >
             About Us
           </a>
           <a
-            href="/machinery/contact/"
+            href={`${baseUrl}machinery/contact/`}
             class={`transition-all font-semibold ${currentPath === '/machinery/contact/' ? 'text-[var(--brand-gold-light)] border-b-2 border-[var(--brand-gold-light)] pb-1' : 'text-gray-300 hover:text-[var(--brand-gold-light)]'}`}
           >
             Contact
           </a>
           <a
-            href="/machinery/contact/"
+            href={`${baseUrl}machinery/contact/`}
             class="bg-[var(--brand-gold)] text-white px-8 py-3 rounded-md hover:bg-[var(--brand-gold-light)] transition-all font-bold shadow-md hover:shadow-lg"
           >
             Request Quote
@@ -83,31 +84,31 @@ const currentPath = Astro.url.pathname;
       <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-[var(--brand-gold)]/30 pt-4">
         <div class="flex flex-col gap-4">
           <a
-            href="/machinery/"
+            href={`${baseUrl}machinery/`}
             class={`transition-colors font-semibold ${currentPath === '/machinery/' || currentPath === '/machinery' ? 'text-[var(--brand-gold-light)]' : 'text-gray-300 hover:text-[var(--brand-gold-light)]'}`}
           >
             Home
           </a>
           <a
-            href="/machinery/products/"
+            href={`${baseUrl}machinery/products/`}
             class={`transition-colors font-semibold ${currentPath.startsWith('/machinery/products') || currentPath.startsWith('/machinery/electrical') || currentPath.startsWith('/machinery/automation') || currentPath.startsWith('/machinery/instrumentation') ? 'text-[var(--brand-gold-light)]' : 'text-gray-300 hover:text-[var(--brand-gold-light)]'}`}
           >
             Products
           </a>
           <a
-            href="/machinery/about/"
+            href={`${baseUrl}machinery/about/`}
             class={`transition-colors font-semibold ${currentPath === '/machinery/about/' ? 'text-[var(--brand-gold-light)]' : 'text-gray-300 hover:text-[var(--brand-gold-light)]'}`}
           >
             About Us
           </a>
           <a
-            href="/machinery/contact/"
+            href={`${baseUrl}machinery/contact/`}
             class={`transition-colors font-semibold ${currentPath === '/machinery/contact/' ? 'text-[var(--brand-gold-light)]' : 'text-gray-300 hover:text-[var(--brand-gold-light)]'}`}
           >
             Contact
           </a>
           <a
-            href="/machinery/contact/"
+            href={`${baseUrl}machinery/contact/`}
             class="bg-[var(--brand-gold)] text-white px-8 py-3 rounded-md hover:bg-[var(--brand-gold-light)] transition-colors font-bold text-center shadow-md"
           >
             Request Quote

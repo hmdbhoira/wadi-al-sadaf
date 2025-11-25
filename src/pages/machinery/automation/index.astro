@@ -1,12 +1,12 @@
 ---
-// Electrical category page - shows all electrical products
+// Automation category page - shows all automation products
 import MachineryLayout from '../../../layouts/MachineryLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { getCategoryBySlug } from '../../../data/machinery';
 
 const baseUrl = import.meta.env.BASE_URL || '/';
 
-const category = getCategoryBySlug('electrical');
+const category = getCategoryBySlug('automation');
 
 if (!category) {
   return Astro.redirect('/404');
@@ -28,7 +28,7 @@ const breadcrumbs = [
     <div class="absolute inset-0 opacity-40">
       <div class="absolute inset-0 bg-cover bg-center" style={`background-image: url('${baseUrl}${category.heroImage}')`}></div>
     </div>
-    <div class="absolute inset-0 bg-gradient-to-br from-black/60 to-brand-gold-dark/60"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-black/60 to-[var(--brand-gold-dark)]/60"></div>
     <div class="container mx-auto px-4 relative z-10">
       <Breadcrumbs items={breadcrumbs} />
       <div class="text-center max-w-4xl mx-auto mt-8">

@@ -327,18 +327,18 @@ export const machineryCategories: Category[] = [
     products: [
       {
         id: 'safety-shoes',
-        name: 'Safety Shoes',
+        name: 'Safety Shoes & Boots',
         slug: 'safety-shoes',
         image: 'images/machinery/safety-security/safety-shoes.png',
-        description: 'Industrial safety footwear with steel toe caps, anti-slip soles, and electrical hazard protection.',
+        description: 'Industrial safety footwear including safety shoes and boots with steel toe caps, anti-slip soles, and electrical hazard protection.',
         category: 'safety-security',
       },
       {
         id: 'helmets',
-        name: 'Safety Helmets',
+        name: 'Safety Helmets, Goggles & Earplugs',
         slug: 'helmets',
         image: 'images/machinery/safety-security/helmets.png',
-        description: 'Industrial hard hats and safety helmets for head protection in construction and manufacturing.',
+        description: 'Complete head and sensory protection including industrial hard hats, safety goggles for eye protection, and earplugs for hearing protection in noisy environments.',
         category: 'safety-security',
       },
       {

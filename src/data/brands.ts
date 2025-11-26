@@ -57,6 +57,8 @@ export const brandLogos: Record<string, string> = {
   'Allen-Bradley': 'images/brands/allen-bradley.png',
   'Mitsubishi': 'images/brands/mitsubishi.png',
   'Yokogawa': 'images/brands/yokogawa.png',
+  // Panel Fabrication brands
+  'Rittal': 'images/brands/rittal.png',
 };
 
 export function getBrandLogo(brandName: string): string | undefined {

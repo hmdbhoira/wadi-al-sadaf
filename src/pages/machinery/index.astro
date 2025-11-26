@@ -36,25 +36,25 @@ const baseUrl = import.meta.env.BASE_URL || '/';
             Browse Products
           </a>
           <a
-            href={`${baseUrl}machinery/contact/`}
+            href={`${baseUrl}machinery/services/`}
             class="bg-transparent text-white px-10 py-5 rounded-lg hover:bg-white/10 transition-all font-bold text-xl border-3 border-white shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 hover:scale-105"
           >
-            Contact Us
+            Browse Services
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- What We Offer -->
+  <!-- Our Products -->
   <section class="py-20 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-[var(--brand-black)] mb-4">What We Offer</h2>
+          <h2 class="text-4xl font-bold text-[var(--brand-black)] mb-4">Our Products</h2>
           <div class="w-24 h-1 bg-[var(--brand-gold)] mx-auto mb-6"></div>
           <p class="text-lg text-[var(--brand-gray)] max-w-3xl mx-auto">
-            Complete industrial solutions from world-leading brands - electrical systems, automation, and precision instrumentation for your industrial needs.
+            Complete industrial products from world-leading brands for your manufacturing and process needs.
           </p>
         </div>
 
@@ -65,7 +65,7 @@ const baseUrl = import.meta.env.BASE_URL || '/';
               <span class="text-3xl text-white">⚡</span>
             </div>
             <h3 class="text-2xl font-bold text-[var(--brand-black)] mb-3">Electrical</h3>
-            <p class="text-[var(--brand-gray)] mb-4">VFDs, Motors, Circuit Breakers, Transformers, Cables, and Panel Components from trusted manufacturers.</p>
+            <p class="text-[var(--brand-gray)] mb-4">VFDs, Motors, Circuit Breakers, Transformers, Cables, and Panel Components.</p>
             <span class="text-[var(--brand-gold)] font-semibold group-hover:text-[var(--brand-gold-dark)]">View Products →</span>
           </a>
 
@@ -75,7 +75,7 @@ const baseUrl = import.meta.env.BASE_URL || '/';
               <span class="text-3xl text-white">🤖</span>
             </div>
             <h3 class="text-2xl font-bold text-[var(--brand-black)] mb-3">Automation</h3>
-            <p class="text-[var(--brand-gray)] mb-4">PLCs, HMIs, Industrial PCs, Smart Sensors, Temperature Controllers, and Robotics solutions.</p>
+            <p class="text-[var(--brand-gray)] mb-4">PLCs, HMIs, Industrial PCs, Smart Sensors, and Robotics solutions.</p>
             <span class="text-[var(--brand-gold)] font-semibold group-hover:text-[var(--brand-gold-dark)]">View Products →</span>
           </a>
 
@@ -85,8 +85,73 @@ const baseUrl = import.meta.env.BASE_URL || '/';
               <span class="text-3xl text-white">📊</span>
             </div>
             <h3 class="text-2xl font-bold text-[var(--brand-black)] mb-3">Instrumentation</h3>
-            <p class="text-[var(--brand-gray)] mb-4">Flow, Level, Pressure, and Temperature instruments, Actuators, Valves, and Gas Analytics.</p>
+            <p class="text-[var(--brand-gray)] mb-4">Flow, Level, Pressure, and Temperature instruments, Actuators, and Valves.</p>
             <span class="text-[var(--brand-gold)] font-semibold group-hover:text-[var(--brand-gold-dark)]">View Products →</span>
+          </a>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href={`${baseUrl}machinery/products/`}
+            class="inline-block bg-[var(--brand-gold)] text-white px-8 py-4 rounded-lg hover:bg-[var(--brand-gold-dark)] transition-all font-semibold shadow-lg hover:shadow-xl"
+          >
+            View All Products →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Services -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-[var(--brand-black)] mb-4">Our Services</h2>
+          <div class="w-24 h-1 bg-[var(--brand-gold)] mx-auto mb-6"></div>
+          <p class="text-lg text-[var(--brand-gray)] max-w-3xl mx-auto">
+            Professional industrial services with experienced technicians, quick turnaround, and comprehensive warranty.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Repairing & Calibration -->
+          <a href={`${baseUrl}machinery/repairing-calibration/`} class="group bg-white p-8 rounded-xl hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-transparent hover:border-[var(--brand-gold)]">
+            <div class="w-16 h-16 bg-[var(--brand-gold)] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span class="text-3xl text-white">🔧</span>
+            </div>
+            <h3 class="text-2xl font-bold text-[var(--brand-black)] mb-3">Repairing & Calibration</h3>
+            <p class="text-[var(--brand-gray)] mb-4">HMI monitors, drives, PLCs, power supplies, pumps, motors, and PCB repairs.</p>
+            <span class="text-[var(--brand-gold)] font-semibold group-hover:text-[var(--brand-gold-dark)]">View Services →</span>
+          </a>
+
+          <!-- Panel Fabrication -->
+          <a href={`${baseUrl}machinery/panel-fabrication/`} class="group bg-white p-8 rounded-xl hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-transparent hover:border-[var(--brand-gold)]">
+            <div class="w-16 h-16 bg-[var(--brand-gold)] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span class="text-3xl text-white">🏭</span>
+            </div>
+            <h3 class="text-2xl font-bold text-[var(--brand-black)] mb-3">Panel Fabrication</h3>
+            <p class="text-[var(--brand-gray)] mb-4">VFD panels, PLC panels, MCCs, control stations, and distribution panels.</p>
+            <span class="text-[var(--brand-gold)] font-semibold group-hover:text-[var(--brand-gold-dark)]">View Services →</span>
+          </a>
+
+          <!-- Control Projects -->
+          <a href={`${baseUrl}machinery/control-projects/`} class="group bg-white p-8 rounded-xl hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-transparent hover:border-[var(--brand-gold)]">
+            <div class="w-16 h-16 bg-[var(--brand-gold)] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span class="text-3xl text-white">📋</span>
+            </div>
+            <h3 class="text-2xl font-bold text-[var(--brand-black)] mb-3">Control Projects</h3>
+            <p class="text-[var(--brand-gray)] mb-4">Design, installation, commissioning, AMC, and smart plant automation.</p>
+            <span class="text-[var(--brand-gold)] font-semibold group-hover:text-[var(--brand-gold-dark)]">View Services →</span>
+          </a>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href={`${baseUrl}machinery/services/`}
+            class="inline-block bg-[var(--brand-gold)] text-white px-8 py-4 rounded-lg hover:bg-[var(--brand-gold-dark)] transition-all font-semibold shadow-lg hover:shadow-xl"
+          >
+            View All Services →
           </a>
         </div>
       </div>
@@ -178,10 +243,16 @@ const baseUrl = import.meta.env.BASE_URL || '/';
           View All Products
         </a>
         <a
+          href={`${baseUrl}machinery/services/`}
+          class="bg-white text-[var(--brand-gold)] px-10 py-4 rounded-lg hover:bg-[var(--brand-cream)] transition-all font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+        >
+          View All Services
+        </a>
+        <a
           href="tel:+971554274256"
           class="bg-[var(--brand-gold-dark)] text-white px-10 py-4 rounded-lg hover:bg-[var(--brand-black)] transition-all font-semibold text-lg border-2 border-white shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
         >
-          📱 +971 55 427 4256
+          📱 Call Us
         </a>
       </div>
     </div>

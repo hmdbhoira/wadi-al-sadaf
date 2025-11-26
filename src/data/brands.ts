@@ -31,6 +31,28 @@ export const brandLogos: Record<string, string> = {
   'Spirax Sarco': 'images/brands/spirax-sarco.png',
   'SMC': 'images/brands/smc.png',
   'KROHNE': 'images/brands/krohne.png',
+  // Mechanical brands
+  'SKF': 'images/brands/skf.png',
+  'NSK': 'images/brands/nsk.png',
+  'FAG': 'images/brands/fag.png',
+  'Grundfos': 'images/brands/grundfos.png',
+  'KSB': 'images/brands/ksb.png',
+  'Flowserve': 'images/brands/flowserve.png',
+  'Pentair': 'images/brands/pentair.png',
+  'Gates': 'images/brands/gates.png',
+  'Continental': 'images/brands/continental.png',
+  'Bosch': 'images/brands/bosch.png',
+  'DeWalt': 'images/brands/dewalt.png',
+  // Safety & Security brands
+  '3M': 'images/brands/3m.png',
+  'MSA Safety': 'images/brands/msa-safety.png',
+  'DuPont': 'images/brands/dupont.png',
+  'Ansell': 'images/brands/ansell.png',
+  'Uvex': 'images/brands/uvex.png',
+  'Hikvision': 'images/brands/hikvision.png',
+  'Dahua': 'images/brands/dahua.png',
+  'Bosch Security': 'images/brands/bosch.png',
+  'Notifier': 'images/brands/notifier.png',
 };
 
 export function getBrandLogo(brandName: string): string | undefined {

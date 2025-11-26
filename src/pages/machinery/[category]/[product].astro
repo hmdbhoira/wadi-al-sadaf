@@ -23,6 +23,10 @@ export async function getStaticPaths() {
 const { category, product } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL || '/';
 
+// Service categories have different key features than product categories
+const serviceCategories = ['repairing-calibration', 'control-projects', 'panel-fabrication'];
+const isServiceCategory = serviceCategories.includes(category.slug);
+
 const breadcrumbs = [
   { label: 'Home', href: `${baseUrl}machinery/` },
   { label: 'Products', href: `${baseUrl}machinery/products/` },
@@ -84,24 +88,45 @@ const relatedProducts = category.products
             <!-- Key Features -->
             <div class="bg-gray-50 rounded-xl p-6 mb-8">
               <h3 class="font-bold text-[var(--brand-black)] mb-4">Key Features</h3>
-              <ul class="space-y-2">
-                <li class="flex items-start gap-3">
-                  <span class="text-[var(--brand-gold)] mt-1">✓</span>
-                  <span class="text-[var(--brand-gray)]">High-quality products from world-leading manufacturers</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="text-[var(--brand-gold)] mt-1">✓</span>
-                  <span class="text-[var(--brand-gray)]">Technical support and consultation available</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="text-[var(--brand-gold)] mt-1">✓</span>
-                  <span class="text-[var(--brand-gray)]">Competitive pricing with timely delivery</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="text-[var(--brand-gold)] mt-1">✓</span>
-                  <span class="text-[var(--brand-gray)]">After-sales service and support</span>
-                </li>
-              </ul>
+              {isServiceCategory ? (
+                <ul class="space-y-2">
+                  <li class="flex items-start gap-3">
+                    <span class="text-[var(--brand-gold)] mt-1">✓</span>
+                    <span class="text-[var(--brand-gray)]">Experienced and certified technicians</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-[var(--brand-gold)] mt-1">✓</span>
+                    <span class="text-[var(--brand-gray)]">Quick turnaround time with quality assurance</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-[var(--brand-gold)] mt-1">✓</span>
+                    <span class="text-[var(--brand-gray)]">Comprehensive warranty on all services</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-[var(--brand-gold)] mt-1">✓</span>
+                    <span class="text-[var(--brand-gray)]">24/7 emergency support available</span>
+                  </li>
+                </ul>
+              ) : (
+                <ul class="space-y-2">
+                  <li class="flex items-start gap-3">
+                    <span class="text-[var(--brand-gold)] mt-1">✓</span>
+                    <span class="text-[var(--brand-gray)]">High-quality products from world-leading manufacturers</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-[var(--brand-gold)] mt-1">✓</span>
+                    <span class="text-[var(--brand-gray)]">Technical support and consultation available</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-[var(--brand-gold)] mt-1">✓</span>
+                    <span class="text-[var(--brand-gray)]">Competitive pricing with timely delivery</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-[var(--brand-gold)] mt-1">✓</span>
+                    <span class="text-[var(--brand-gray)]">After-sales service and support</span>
+                  </li>
+                </ul>
+              )}
             </div>
 
             <!-- CTA Buttons -->
@@ -137,7 +162,11 @@ const relatedProducts = category.products
         <div class="max-w-6xl mx-auto">
           <div class="text-center mb-10">
             <h2 class="text-2xl font-bold text-[var(--brand-black)] mb-2">Trusted Brands</h2>
-            <p class="text-[var(--brand-gray)]">We supply {category.name.toLowerCase()} products from leading manufacturers</p>
+            <p class="text-[var(--brand-gray)]">
+              {isServiceCategory
+                ? `We service and work with equipment from leading manufacturers`
+                : `We supply ${category.name.toLowerCase()} products from leading manufacturers`}
+            </p>
           </div>
           <div class="flex flex-wrap justify-center items-center gap-4">
             {category.brands.map((brand: string) => {
@@ -171,8 +200,14 @@ const relatedProducts = category.products
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
           <div class="text-center mb-10">
-            <h2 class="text-2xl font-bold text-[var(--brand-black)] mb-2">Related Products</h2>
-            <p class="text-[var(--brand-gray)]">Other {category.name.toLowerCase()} products you might be interested in</p>
+            <h2 class="text-2xl font-bold text-[var(--brand-black)] mb-2">
+              {isServiceCategory ? 'Related Services' : 'Related Products'}
+            </h2>
+            <p class="text-[var(--brand-gray)]">
+              {isServiceCategory
+                ? `Other ${category.name.toLowerCase()} services you might be interested in`
+                : `Other ${category.name.toLowerCase()} products you might be interested in`}
+            </p>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -202,7 +237,7 @@ const relatedProducts = category.products
               href={`${baseUrl}machinery/${category.slug}/`}
               class="inline-block text-[var(--brand-gold)] font-semibold hover:text-[var(--brand-gold-dark)] transition-colors"
             >
-              View All {category.name} Products →
+              View All {category.name} {isServiceCategory ? 'Services' : 'Products'} →
             </a>
           </div>
         </div>

@@ -53,6 +53,10 @@ export const brandLogos: Record<string, string> = {
   'Dahua': 'images/brands/dahua.png',
   'Bosch Security': 'images/brands/bosch.png',
   'Notifier': 'images/brands/notifier.png',
+  // Repairing & Calibration brands
+  'Allen-Bradley': 'images/brands/allen-bradley.png',
+  'Mitsubishi': 'images/brands/mitsubishi.png',
+  'Yokogawa': 'images/brands/yokogawa.png',
 };
 
 export function getBrandLogo(brandName: string): string | undefined {

@@ -1,41 +1,41 @@
 ---
-// Machinery products page - shows product category tiles (not services)
+// Machinery services page - shows service category tiles
 import MachineryLayout from '../../../layouts/MachineryLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
-import { productCategories } from '../../../data/machinery';
+import { serviceCategories } from '../../../data/machinery';
 
 const baseUrl = import.meta.env.BASE_URL || '/';
 
 const breadcrumbs = [
   { label: 'Home', href: `${baseUrl}machinery/` },
-  { label: 'Products' },
+  { label: 'Services' },
 ];
 ---
 
 <MachineryLayout
-  title="Products"
-  description="Complete range of electrical, automation, instrumentation, and mechanical products for industrial applications. Trusted brands including SIEMENS, ABB, Schneider Electric, SKF, and more."
+  title="Services"
+  description="Professional industrial services including repairing & calibration, panel fabrication, and control projects. Expert technicians with quick turnaround and comprehensive warranty."
 >
   <!-- Hero Section -->
   <section class="relative bg-black pt-8 pb-24 md:pt-12 md:pb-32">
     <div class="absolute inset-0 opacity-40">
-      <div class="absolute inset-0 bg-cover bg-center" style={`background-image: url('${baseUrl}images/machinery/electrical/hero.png')`}></div>
+      <div class="absolute inset-0 bg-cover bg-center" style={`background-image: url('${baseUrl}images/machinery/control-projects/hero.png')`}></div>
     </div>
     <div class="absolute inset-0 bg-gradient-to-br from-black/60 to-brand-gold-dark/60"></div>
     <div class="container mx-auto px-4 relative z-10">
       <Breadcrumbs items={breadcrumbs} />
       <div class="text-center max-w-4xl mx-auto mt-8">
         <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-2xl">
-          Machinery & Industrial Solutions
+          Industrial Services
         </h1>
         <p class="text-xl md:text-2xl text-white mb-8 drop-shadow-xl">
-          Comprehensive industrial automation, electrical, and instrumentation products from world-leading brands.
+          Expert repairing, calibration, panel fabrication, and control project services with certified technicians.
         </p>
         <a
           href="#categories"
           class="inline-block bg-[var(--brand-gold)] text-white px-8 py-4 rounded-lg hover:bg-[var(--brand-gold-light)] transition-all font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1"
         >
-          Browse Categories
+          Browse Services
         </a>
       </div>
     </div>
@@ -45,15 +45,15 @@ const breadcrumbs = [
   <section id="categories" class="py-20 bg-gradient-to-b from-gray-50 to-white">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-[var(--brand-black)] text-center mb-4">
-        Browse by Category
+        Our Services
       </h2>
       <p class="text-center text-[var(--brand-gray)] mb-12 max-w-2xl mx-auto">
-        Choose from our comprehensive range of electrical, automation, instrumentation, and mechanical solutions
+        Professional industrial services with experienced technicians, quick turnaround, and comprehensive warranty
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {
-          productCategories.map((category) => (
+          serviceCategories.map((category) => (
             <a
               href={`${baseUrl}machinery/${category.slug}/`}
               class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-gray-200 hover:border-[var(--brand-gold)] transform hover:-translate-y-1"
@@ -72,7 +72,7 @@ const breadcrumbs = [
                   </h3>
                   <div class="flex items-center gap-2 text-white/90">
                     <span class="text-sm font-medium bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-                      {category.products.length} Products
+                      {category.products.length} Services
                     </span>
                   </div>
                 </div>
@@ -85,7 +85,7 @@ const breadcrumbs = [
                 <!-- Brands Preview -->
                 {category.brands && category.brands.length > 0 && (
                   <div class="mb-4 pb-4 border-t border-gray-200 pt-4">
-                    <p class="text-xs font-semibold text-[var(--brand-gray)] mb-3 uppercase tracking-wide">Featured Brands:</p>
+                    <p class="text-xs font-semibold text-[var(--brand-gray)] mb-3 uppercase tracking-wide">Brands We Service:</p>
                     <div class="flex flex-wrap gap-2">
                       {category.brands.slice(0, 3).map((brand) => (
                         <span class="text-xs bg-[var(--brand-cream)] text-[var(--brand-gold-dark)] px-3 py-1.5 rounded-md font-medium">
@@ -103,7 +103,7 @@ const breadcrumbs = [
 
                 <div class="flex items-center justify-between mt-4">
                   <span class="text-[var(--brand-gold)] font-semibold group-hover:text-[var(--brand-gold-dark)] transition-colors">
-                    View All Products
+                    View All Services
                   </span>
                   <span class="text-[var(--brand-gold)] group-hover:translate-x-2 transition-transform duration-300 text-xl">
                     →
@@ -113,6 +113,25 @@ const breadcrumbs = [
             </a>
           ))
         }
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Commitment Section -->
+  <section class="py-16 bg-[var(--brand-cream)]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-[var(--brand-black)] mb-6">What Wadi Al Sadaf Provides</h2>
+        <p class="text-[var(--brand-gray)] mb-8">Our commitment to quality and customer satisfaction</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <span class="bg-white px-6 py-3 rounded-lg shadow-md text-[var(--brand-black)] font-medium">Testing updates</span>
+          <span class="bg-white px-6 py-3 rounded-lg shadow-md text-[var(--brand-black)] font-medium">Inspection reports</span>
+          <span class="bg-white px-6 py-3 rounded-lg shadow-md text-[var(--brand-black)] font-medium">Diagnosis results</span>
+          <span class="bg-white px-6 py-3 rounded-lg shadow-md text-[var(--brand-black)] font-medium">Lucrative Warranty period</span>
+          <span class="bg-white px-6 py-3 rounded-lg shadow-md text-[var(--brand-black)] font-medium">Final testing videos</span>
+          <span class="bg-white px-6 py-3 rounded-lg shadow-md text-[var(--brand-black)] font-medium">Detailed final reports</span>
+          <span class="bg-white px-6 py-3 rounded-lg shadow-md text-[var(--brand-black)] font-medium">Emergency On-Call services</span>
+        </div>
       </div>
     </div>
   </section>
@@ -141,10 +160,9 @@ const breadcrumbs = [
       <div class="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
     </div>
     <div class="container mx-auto px-4 text-center relative z-10">
-      <h2 class="text-4xl font-bold text-white mb-6">Need Help Finding the Right Product?</h2>
+      <h2 class="text-4xl font-bold text-white mb-6">Need Professional Service?</h2>
       <p class="text-xl text-white mb-10 max-w-2xl mx-auto leading-relaxed">
-        Our expert technical team is ready to provide recommendations for customized products and systems
-        suitable for your specific applications.
+        Our expert technicians are ready to help with repairs, calibration, panel fabrication, and control projects.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a

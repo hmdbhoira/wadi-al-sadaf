@@ -24,12 +24,11 @@ const { category, product } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL || '/';
 
 // Service categories have different key features than product categories
-const serviceCategories = ['repairing-calibration', 'control-projects', 'panel-fabrication'];
-const isServiceCategory = serviceCategories.includes(category.slug);
+const isServiceCategory = category.type === 'service';
 
 const breadcrumbs = [
   { label: 'Home', href: `${baseUrl}machinery/` },
-  { label: 'Products', href: `${baseUrl}machinery/products/` },
+  { label: isServiceCategory ? 'Services' : 'Products', href: `${baseUrl}machinery/${isServiceCategory ? 'services' : 'products'}/` },
   { label: category.name, href: `${baseUrl}machinery/${category.slug}/` },
   { label: product.name },
 ];

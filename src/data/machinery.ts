@@ -18,6 +18,7 @@ export interface Category {
   description: string;
   products: Product[];
   brands?: string[];
+  type: 'product' | 'service';
 }
 
 export const machineryCategories: Category[] = [
@@ -27,6 +28,7 @@ export const machineryCategories: Category[] = [
     slug: 'electrical',
     heroImage: 'images/machinery/electrical/hero.png',
     description: 'Complete range of electrical products including VFDs, motors, transformers, circuit breakers, and control components for industrial applications.',
+    type: 'product',
     brands: ['SIEMENS', 'Schneider Electric', 'ABB', 'OMRON', 'Phoenix Contact', 'FLUKE', 'Danfoss', 'Lenze', 'LS', 'LAPP KABEL', 'Rockwell Automation'],
     products: [
       {
@@ -101,6 +103,7 @@ export const machineryCategories: Category[] = [
     slug: 'automation',
     heroImage: 'images/machinery/automation/automation-hero.png',
     description: 'Advanced automation solutions including PLCs, HMIs, industrial PCs, sensors, and robotic systems for smart manufacturing.',
+    type: 'product',
     brands: ['SIEMENS', 'Schneider Electric', 'ABB', 'SICK', 'OMRON', 'Weidmüller', 'Pilz', 'Honeywell', 'Rockwell Automation', 'ifm electronic', 'KUKA'],
     products: [
       {
@@ -175,6 +178,7 @@ export const machineryCategories: Category[] = [
     slug: 'instrumentation',
     heroImage: 'images/machinery/instrumentation/hero.png', // TO BE ADDED
     description: 'Comprehensive instrumentation solutions for flow, level, pressure, and temperature measurement in industrial processes.',
+    type: 'product',
     brands: ['SIEMENS', 'Rotork', 'WIKA', 'ABB', 'FESTO', 'Honeywell', 'E+H Endress+Hauser', 'Emerson', 'Spirax Sarco', 'SMC', 'KROHNE'],
     products: [
       {
@@ -249,6 +253,7 @@ export const machineryCategories: Category[] = [
     slug: 'mechanical',
     heroImage: 'images/machinery/mechanical/hero.png',
     description: 'Complete range of mechanical products including valves, flanges, pumps, bearings, and industrial components for manufacturing and process industries.',
+    type: 'product',
     brands: ['SKF', 'NSK', 'FAG', 'Grundfos', 'KSB', 'Flowserve', 'Pentair', 'Gates', 'Continental', 'Bosch', 'DeWalt'],
     products: [
       {
@@ -323,6 +328,7 @@ export const machineryCategories: Category[] = [
     slug: 'safety-security',
     heroImage: 'images/machinery/safety-security/hero.png',
     description: 'Complete range of safety equipment and security systems including PPE, fire alarms, CCTV, and access control for workplace safety compliance.',
+    type: 'product',
     brands: ['3M', 'Honeywell', 'MSA Safety', 'DuPont', 'Ansell', 'Uvex', 'Hikvision', 'Dahua', 'Bosch Security', 'Notifier'],
     products: [
       {
@@ -397,6 +403,7 @@ export const machineryCategories: Category[] = [
     slug: 'repairing-calibration',
     heroImage: 'images/machinery/repairing-calibration/hero.png',
     description: 'Professional repairing and calibration services for industrial equipment including HMI monitors, drives, PLCs, and power supplies.',
+    type: 'service',
     brands: ['SIEMENS', 'ABB', 'Schneider Electric', 'Allen-Bradley', 'Mitsubishi', 'Danfoss', 'FLUKE', 'Yokogawa'],
     products: [
       {
@@ -471,6 +478,7 @@ export const machineryCategories: Category[] = [
     slug: 'panel-fabrication',
     heroImage: 'images/machinery/panel-fabrication/hero.png',
     description: 'Custom panel fabrication services including VFD panels, PLC panels, control stations, and motor control centers for industrial automation.',
+    type: 'service',
     brands: ['SIEMENS', 'ABB', 'Schneider Electric', 'Rockwell Automation', 'Rittal', 'Phoenix Contact'],
     products: [
       {
@@ -545,6 +553,7 @@ export const machineryCategories: Category[] = [
     slug: 'control-projects',
     heroImage: 'images/machinery/control-projects/hero.png',
     description: 'Complete control project services from design and installation to commissioning, maintenance, and smart plant automation upgrades.',
+    type: 'service',
     brands: ['SIEMENS', 'ABB', 'Schneider Electric', 'Rockwell Automation', 'Honeywell', 'Emerson'],
     products: [
       {
@@ -625,3 +634,9 @@ export function getProductBySlug(categorySlug: string, productSlug: string): Pro
   const category = getCategoryBySlug(categorySlug);
   return category?.products.find((product) => product.slug === productSlug);
 }
+
+// Get only product categories (not services)
+export const productCategories = machineryCategories.filter((cat) => cat.type === 'product');
+
+// Get only service categories
+export const serviceCategories = machineryCategories.filter((cat) => cat.type === 'service');

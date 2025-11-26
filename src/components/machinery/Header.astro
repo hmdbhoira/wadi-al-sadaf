@@ -59,9 +59,15 @@ const pathStartsWith = (path: string) => {
           </a>
           <a
             href={`${baseUrl}machinery/products/`}
-            class={`transition-all font-semibold ${pathStartsWith('machinery/products') || pathStartsWith('machinery/electrical') || pathStartsWith('machinery/automation') || pathStartsWith('machinery/instrumentation') ? 'text-[var(--brand-gold-light)] border-b-2 border-[var(--brand-gold-light)] pb-1' : 'text-gray-300 hover:text-[var(--brand-gold-light)]'}`}
+            class={`transition-all font-semibold ${pathStartsWith('machinery/products') || pathStartsWith('machinery/electrical') || pathStartsWith('machinery/automation') || pathStartsWith('machinery/instrumentation') || pathStartsWith('machinery/mechanical') || pathStartsWith('machinery/safety-security') ? 'text-[var(--brand-gold-light)] border-b-2 border-[var(--brand-gold-light)] pb-1' : 'text-gray-300 hover:text-[var(--brand-gold-light)]'}`}
           >
             Products
+          </a>
+          <a
+            href={`${baseUrl}machinery/services/`}
+            class={`transition-all font-semibold ${pathStartsWith('machinery/services') || pathStartsWith('machinery/repairing-calibration') || pathStartsWith('machinery/panel-fabrication') || pathStartsWith('machinery/control-projects') ? 'text-[var(--brand-gold-light)] border-b-2 border-[var(--brand-gold-light)] pb-1' : 'text-gray-300 hover:text-[var(--brand-gold-light)]'}`}
+          >
+            Services
           </a>
           <a
             href={`${baseUrl}machinery/about/`}
@@ -106,9 +112,15 @@ const pathStartsWith = (path: string) => {
           </a>
           <a
             href={`${baseUrl}machinery/products/`}
-            class={`transition-colors font-semibold ${pathStartsWith('machinery/products') || pathStartsWith('machinery/electrical') || pathStartsWith('machinery/automation') || pathStartsWith('machinery/instrumentation') ? 'text-[var(--brand-gold-light)]' : 'text-gray-300 hover:text-[var(--brand-gold-light)]'}`}
+            class={`transition-colors font-semibold ${pathStartsWith('machinery/products') || pathStartsWith('machinery/electrical') || pathStartsWith('machinery/automation') || pathStartsWith('machinery/instrumentation') || pathStartsWith('machinery/mechanical') || pathStartsWith('machinery/safety-security') ? 'text-[var(--brand-gold-light)]' : 'text-gray-300 hover:text-[var(--brand-gold-light)]'}`}
           >
             Products
+          </a>
+          <a
+            href={`${baseUrl}machinery/services/`}
+            class={`transition-colors font-semibold ${pathStartsWith('machinery/services') || pathStartsWith('machinery/repairing-calibration') || pathStartsWith('machinery/panel-fabrication') || pathStartsWith('machinery/control-projects') ? 'text-[var(--brand-gold-light)]' : 'text-gray-300 hover:text-[var(--brand-gold-light)]'}`}
+          >
+            Services
           </a>
           <a
             href={`${baseUrl}machinery/about/`}

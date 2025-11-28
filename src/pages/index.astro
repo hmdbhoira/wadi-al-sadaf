@@ -59,11 +59,21 @@ const baseUrl = import.meta.env.BASE_URL || '/';
         <!-- Outdoor & Pool Tile -->
         <a
           href={`${baseUrl}furniture/`}
-          class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-[#2D5A5A] flex flex-col"
+          class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-[#2D5A5A] flex flex-col"
         >
+          <!-- Coming Soon Badge -->
+          <div class="absolute top-4 right-4 z-10 bg-[#2D5A5A] text-white text-xs font-bold px-3 py-1 rounded-full">
+            Coming Soon
+          </div>
           <div class="h-48 bg-gradient-to-br from-[#2D5A5A] to-[#1F4040] flex items-center justify-center">
-            <svg class="w-24 h-24 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            <!-- Sun umbrella with pool waves icon -->
+            <svg class="w-24 h-24 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <!-- Beach umbrella -->
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3C8 3 5 5.5 5 8h14c0-2.5-3-5-7-5z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12" />
+              <!-- Pool waves -->
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2 18c1.5 1 3 1.5 4.5 0s3-1 4.5 0 3 1.5 4.5 0 3-1 4.5 0" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2 21c1.5 1 3 1.5 4.5 0s3-1 4.5 0 3 1.5 4.5 0 3-1 4.5 0" />
             </svg>
           </div>
           <div class="p-6 text-center">

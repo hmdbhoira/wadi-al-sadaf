@@ -1,0 +1,73 @@
+---
+// Outdoor & Pool domain footer - Deep Forest Teal theme
+const baseUrl = import.meta.env.BASE_URL || '/';
+---
+
+<footer class="bg-[#1F4040] text-white mt-auto border-t-4 border-[var(--brand-gold)]">
+  <div class="container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Company Info -->
+      <div>
+        <img src={`${baseUrl}images/logo.jpeg`} alt="Wadi Al Sadaf" class="h-16 w-16 object-contain mb-4 rounded-full shadow-md" />
+        <h3 class="text-xl font-bold text-white mb-2">Wadi Al Sadaf</h3>
+        <p class="text-sm text-gray-300 mb-4 leading-relaxed">
+          Premium outdoor furniture, pool equipment, and safety solutions for hotels, resorts, and residential communities across the Middle East.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-bold text-[var(--brand-gold)] mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href={`${baseUrl}furniture/`} class="text-gray-300 hover:text-[var(--brand-gold)] transition-colors">Home</a></li>
+          <li><a href={`${baseUrl}furniture/products/`} class="text-gray-300 hover:text-[var(--brand-gold)] transition-colors">Products</a></li>
+          <li><a href={`${baseUrl}furniture/about/`} class="text-gray-300 hover:text-[var(--brand-gold)] transition-colors">About Us</a></li>
+          <li><a href={`${baseUrl}furniture/contact/`} class="text-gray-300 hover:text-[var(--brand-gold)] transition-colors">Contact</a></li>
+          <li><a href={`${baseUrl}`} class="text-gray-300 hover:text-[var(--brand-gold)] transition-colors">All Divisions</a></li>
+        </ul>
+      </div>
+
+      <!-- Product Categories -->
+      <div>
+        <h4 class="text-lg font-bold text-[var(--brand-gold)] mb-4">Our Products</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href={`${baseUrl}furniture/sun-loungers-poolside/`} class="text-gray-300 hover:text-[var(--brand-gold)] transition-colors">Sun Loungers & Poolside</a></li>
+          <li><a href={`${baseUrl}furniture/outdoor-furniture/`} class="text-gray-300 hover:text-[var(--brand-gold)] transition-colors">Outdoor Furniture</a></li>
+          <li><a href={`${baseUrl}furniture/life-saving-pool-safety/`} class="text-gray-300 hover:text-[var(--brand-gold)] transition-colors">Life Saving & Pool Safety</a></li>
+          <li><a href={`${baseUrl}furniture/camp-staff-supplies/`} class="text-gray-300 hover:text-[var(--brand-gold)] transition-colors">Camp & Staff Supplies</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h4 class="text-lg font-bold text-[var(--brand-gold)] mb-4">Contact Us</h4>
+        <ul class="space-y-3 text-sm text-gray-300">
+          <li class="flex items-start gap-2">
+            <span class="mt-1">📍</span>
+            <span>
+              Dubai Industrial City, 17R-SH-493<br />
+              Saih Shuaib 3, Dubai, UAE
+            </span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1">📱</span>
+            <a href="tel:+971556142174" class="hover:text-[var(--brand-gold)] transition-colors">
+              +971 55 614 2174
+            </a>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1">✉</span>
+            <a href="mailto:wadialsadaf.ae@gmail.com" class="hover:text-[var(--brand-gold)] transition-colors break-all">
+              wadialsadaf.ae@gmail.com
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-[var(--brand-gold)]/30 mt-8 pt-8 text-center text-sm text-gray-400">
+      <p>&copy; {new Date().getFullYear()} Wadi Al Sadaf General Trading LLC - Outdoor & Pool Division. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

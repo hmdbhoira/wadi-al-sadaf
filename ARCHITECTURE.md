@@ -98,28 +98,28 @@ GLOBAL PAGES
    - Tagline: "Your trusted partner across multiple industries"
    - Brief value proposition
 
-2. **Three Prominent Vertical Tiles**
+2. **Two Prominent Vertical Tiles** (✅ Implemented)
    Each tile includes:
    - Large icon/image
    - Section name
    - Brief description (2-3 sentences)
-   - Clear CTA: "Explore Machinery →"
+   - Clear CTA: "Explore Machinery →" / "Explore Outdoor & Pool →"
    - Hover effects (lift, shadow, color change)
    - Link to section landing page
 
    **Machinery Tile:**
-   - Color: Orange theme
+   - Color: Gold/Navy theme
    - Icon: Machinery/gears
-   - Description: Industrial equipment, construction, manufacturing
+   - Description: Industrial equipment, automation, electrical solutions
    - Link: `/machinery/`
 
-   **Furniture Tile:**
+   **Outdoor & Pool Tile:**
    - Color: Green theme
-   - Icon: Furniture/home
+   - Icon: Outdoor furniture
    - Description: Outdoor furniture, swimming pool equipment
-   - Link: `/furniture/`
+   - Link: `/furniture/` (coming soon page)
 
-   **Medical Tile:**
+   **Medical Tile:** (Future)
    - Color: Blue theme
    - Icon: Heart/medical cross
    - Description: Healthcare solutions, medical equipment
@@ -521,29 +521,32 @@ Structure:
 
 ## ✅ Summary Checklist
 
-Before building, ensure you have:
-- [ ] PDF profile with brand colors
-- [ ] Logo files (SVG preferred)
-- [ ] Hero images for Machinery section
-- [ ] Hero images for Furniture section
-- [ ] Product photos for initial categories
-- [ ] Content: Company description
-- [ ] Content: Machinery section description and categories
-- [ ] Content: Furniture section description and categories
-- [ ] Contact information (email, phone, address)
+### ✅ Completed:
+- [x] Brand colors (Gold/Navy theme)
+- [x] Logo files (JPEG + PNG favicon)
+- [x] Hero images for all 8 Machinery categories
+- [x] Product photos for all categories
+- [x] Content: Company description
+- [x] Content: Machinery section with 5 product + 3 service categories
+- [x] Contact information (email, phone, address)
 
-Build order:
-1. [ ] Hub homepage with 3 tiles
-2. [ ] Machinery landing page
-3. [ ] Machinery categories (2-3 to start)
-4. [ ] Machinery products (5-10 to start)
-5. [ ] Furniture landing page
-6. [ ] Furniture categories
-7. [ ] Furniture products
-8. [ ] About page
-9. [ ] Contact page
-10. [ ] Medical section (future)
+### Build Progress:
+1. [x] Hub homepage with 2 tiles (Machinery | Outdoor & Pool)
+2. [x] Machinery landing page (with Products & Services sections)
+3. [x] Machinery products page (5 categories)
+4. [x] Machinery services page (3 categories)
+5. [x] All category pages with product grids
+6. [x] All product/service detail pages
+7. [x] About page (`/machinery/about/`)
+8. [x] Contact page (`/machinery/contact/`)
+9. [x] Custom domain (wadialsadaf.com)
+10. [x] WhatsApp floating button
+11. [x] Mobile-responsive design
+12. [ ] Furniture/Outdoor & Pool domain (future)
+13. [ ] Medical section (future)
 
 ---
+
+**Last Updated:** 2025-11-28
 
 **This document contains EVERYTHING discussed. Reference it when building.**

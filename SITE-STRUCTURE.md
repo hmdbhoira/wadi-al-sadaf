@@ -20,16 +20,16 @@ Each domain has:
 
 ## URL Structure
 
-### Root Hub (Future - On Hold)
+### Root Hub (✅ Complete)
 ```
-/                           → Simple hub with 2 tiles: Machinery | Furniture
+/                           → Simple hub with 2 tiles: Machinery | Outdoor & Pool
                               NO navbar, just contact details
 ```
 
 ### Machinery Domain (Complete Website #1)
 ```
 /machinery/                 → MACHINERY HOMEPAGE (landing page with Mission/Vision)
-├── /machinery/products/           → Products listing (3 category tiles)
+├── /machinery/products/           → Products listing (5 category tiles)
 │   ├── /machinery/electrical/            → Electrical category (8 products)
 │   │   ├── /machinery/electrical/vfd/                → Product detail
 │   │   ├── /machinery/electrical/motors/
@@ -38,16 +38,27 @@ Each domain has:
 │   │   ├── /machinery/automation/plc/
 │   │   ├── /machinery/automation/hmi/
 │   │   └── ... (8 products total)
-│   └── /machinery/instrumentation/       → Instrumentation category (8 products)
-│       ├── /machinery/instrumentation/flow-instruments/
-│       └── ... (8 products total)
+│   ├── /machinery/instrumentation/       → Instrumentation category (8 products)
+│   │   ├── /machinery/instrumentation/flow-instruments/
+│   │   └── ... (8 products total)
+│   ├── /machinery/mechanical/            → Mechanical category
+│   │   └── ... (products)
+│   └── /machinery/safety-security/       → Safety & Security category
+│       └── ... (products)
+├── /machinery/services/           → Services listing (3 service tiles)
+│   ├── /machinery/repairing-calibration/ → Repairing & Calibration service
+│   │   └── ... (service offerings)
+│   ├── /machinery/panel-fabrication/     → Panel Fabrication service
+│   │   └── ... (service offerings)
+│   └── /machinery/control-projects/      → Control Projects service
+│       └── ... (service offerings)
 ├── /machinery/about/              → About Us (machinery-specific story)
 └── /machinery/contact/            → Contact page
 ```
 
 **Machinery Navigation:**
 ```
-Home (=/machinery/) | Products | About Us | Contact | [Request Quote Button]
+Home (=/machinery/) | Products | Services | About Us | Contact | [Request Quote Button]
 ```
 
 ### Furniture Domain (Complete Website #2 - Future)
@@ -133,20 +144,45 @@ src/layouts/
 
 ### 3. MACHINERY PRODUCTS PAGE (`/machinery/products/`)
 
-**Purpose:** Shows 3 product categories for machinery
+**Purpose:** Shows 5 product categories for machinery
 
 **Content:**
 - Hero section
 - Industries badges
-- 3 category cards:
+- 5 category cards:
   - Electrical → `/machinery/electrical/`
   - Automation → `/machinery/automation/`
   - Instrumentation → `/machinery/instrumentation/`
+  - Mechanical → `/machinery/mechanical/`
+  - Safety & Security → `/machinery/safety-security/`
 - CTA section
 
 **Navigation:**
 - Home → `/machinery/`
 - Products (highlighted)
+- Services
+- About Us
+- Contact
+
+---
+
+### 3b. MACHINERY SERVICES PAGE (`/machinery/services/`)
+
+**Purpose:** Shows 3 service categories for machinery
+
+**Content:**
+- Hero section
+- Service commitment section
+- 3 service cards:
+  - Repairing & Calibration → `/machinery/repairing-calibration/`
+  - Panel Fabrication → `/machinery/panel-fabrication/`
+  - Control Projects → `/machinery/control-projects/`
+- CTA section
+
+**Navigation:**
+- Home → `/machinery/`
+- Products
+- Services (highlighted)
 - About Us
 - Contact
 
@@ -237,7 +273,8 @@ export interface Category {
 
 ### Machinery Header:
 - **Home**: Highlighted when `currentPath === '/machinery/' || currentPath === '/machinery'`
-- **Products**: Highlighted when `currentPath.startsWith('/machinery/products')` OR `currentPath.startsWith('/machinery/electrical')` OR `currentPath.startsWith('/machinery/automation')` OR `currentPath.startsWith('/machinery/instrumentation')`
+- **Products**: Highlighted when `currentPath.startsWith('/machinery/products')` OR any product category path (`/machinery/electrical`, `/machinery/automation`, `/machinery/instrumentation`, `/machinery/mechanical`, `/machinery/safety-security`)
+- **Services**: Highlighted when `currentPath.startsWith('/machinery/services')` OR any service category path (`/machinery/repairing-calibration`, `/machinery/panel-fabrication`, `/machinery/control-projects`)
 - **About Us**: Highlighted when `currentPath === '/machinery/about/'`
 - **Contact**: Highlighted when `currentPath === '/machinery/contact/'`
 
@@ -297,24 +334,25 @@ public/images/
 
 ### ✅ Completed:
 1. Brand colors configured
-2. Product data structure
-3. Images organized (Electrical & Automation complete)
-4. **MachineryLayout** with separate Header/Footer
-5. `/machinery/` homepage with full landing page
-6. `/machinery/products/` with 3 category tiles
-7. Navigation highlighting working correctly
-8. Root `/` simple homepage
-
-### 🚧 In Progress:
-- Documentation updates
+2. Product data structure with `type: 'product' | 'service'` discrimination
+3. Images organized for all 8 categories (5 products + 3 services)
+4. **MachineryLayout** with separate Header/Footer + floating WhatsApp button
+5. `/machinery/` homepage with full landing page (Products & Services sections)
+6. `/machinery/products/` with 5 product category tiles
+7. `/machinery/services/` with 3 service category tiles
+8. Navigation highlighting working correctly (Products vs Services)
+9. Root `/` hub with 2 tiles (Machinery | Outdoor & Pool)
+10. Category pages (`/machinery/electrical/`, etc.) with brand logos
+11. Product/Service detail pages with service-specific key features
+12. About page (`/machinery/about/`)
+13. Contact page (`/machinery/contact/`)
+14. Custom domain setup (wadialsadaf.com) with CNAME
+15. Favicon (logo converted to PNG)
+16. Mobile-responsive header with contact info
+17. 5-column footer with all products and services
 
 ### ⏳ To Do:
-9. Category pages (`/machinery/electrical/`, etc.)
-10. Product detail pages
-11. About page (`/machinery/about/`)
-12. Contact page (`/machinery/contact/`)
-13. Instrumentation images (6 missing)
-14. Furniture domain (complete separate website)
+- Furniture/Outdoor & Pool domain (complete separate website)
 
 ---
 
@@ -352,6 +390,6 @@ When adding medical:
 
 ---
 
-**Last Updated:** 2025-11-24
+**Last Updated:** 2025-11-28
 
 **Key Insight:** Think of `/machinery/` and `/furniture/` as two different websites that happen to share a domain, not as sections of one website.

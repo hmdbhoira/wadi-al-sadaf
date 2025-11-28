@@ -1,0 +1,141 @@
+---
+// Outdoor & Pool domain header - Home links to /furniture/
+const currentPath = Astro.url.pathname;
+const baseUrl = import.meta.env.BASE_URL || '/';
+
+// Helper function to check if current path matches, accounting for base URL
+const isCurrentPath = (path: string) => {
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  const fullPath = `${baseUrl}${cleanPath}`;
+  return currentPath === fullPath || currentPath === fullPath.replace(/\/$/, '');
+};
+
+const pathStartsWith = (path: string) => {
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  const fullPath = `${baseUrl}${cleanPath}`;
+  return currentPath.startsWith(fullPath);
+};
+---
+
+<header class="bg-[#2D5A5A] shadow-lg sticky top-0 z-50 border-b-4 border-[var(--brand-gold)]">
+  <div class="container mx-auto px-4">
+    <!-- Top bar with contact info -->
+    <div class="border-b border-[var(--brand-gold)]/30 py-2">
+      <div class="flex flex-col sm:flex-row justify-center sm:justify-start items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-200">
+        <a href="tel:+971556142174" class="hover:text-[var(--brand-gold-light)] transition-colors font-medium">
+          <span class="inline-block mr-1">📱</span>
+          +971 55 614 2174
+        </a>
+        <a href="mailto:wadialsadaf.ae@gmail.com" class="hover:text-[var(--brand-gold-light)] transition-colors font-medium truncate max-w-[250px] sm:max-w-none">
+          <span class="inline-block mr-1">✉</span>
+          wadialsadaf.ae@gmail.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Main navigation -->
+    <nav class="py-4">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <a href={`${baseUrl}furniture/`} class="flex items-center gap-3 hover:opacity-90 transition-opacity">
+          <img src={`${baseUrl}images/logo.jpeg`} alt="Wadi Al Sadaf" class="h-16 w-16 object-contain rounded-full border-2 border-[var(--brand-gold)] shadow-lg" />
+          <div>
+            <h1 class="text-xl font-bold text-white">Wadi Al Sadaf</h1>
+            <p class="text-xs text-[var(--brand-gold-light)] font-medium">Outdoor & Pool Division</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-6">
+          <a
+            href={`${baseUrl}furniture/`}
+            class={`transition-all font-semibold ${isCurrentPath('furniture/') ? 'text-[var(--brand-gold-light)] border-b-2 border-[var(--brand-gold-light)] pb-1' : 'text-gray-200 hover:text-[var(--brand-gold-light)]'}`}
+          >
+            Home
+          </a>
+          <a
+            href={`${baseUrl}furniture/products/`}
+            class={`transition-all font-semibold ${pathStartsWith('furniture/products') || pathStartsWith('furniture/sun-loungers') || pathStartsWith('furniture/outdoor-furniture') || pathStartsWith('furniture/life-saving') || pathStartsWith('furniture/camp-staff') ? 'text-[var(--brand-gold-light)] border-b-2 border-[var(--brand-gold-light)] pb-1' : 'text-gray-200 hover:text-[var(--brand-gold-light)]'}`}
+          >
+            Products
+          </a>
+          <a
+            href={`${baseUrl}furniture/about/`}
+            class={`transition-all font-semibold ${isCurrentPath('furniture/about/') ? 'text-[var(--brand-gold-light)] border-b-2 border-[var(--brand-gold-light)] pb-1' : 'text-gray-200 hover:text-[var(--brand-gold-light)]'}`}
+          >
+            About Us
+          </a>
+          <a
+            href={`${baseUrl}furniture/contact/`}
+            class={`transition-all font-semibold ${isCurrentPath('furniture/contact/') ? 'text-[var(--brand-gold-light)] border-b-2 border-[var(--brand-gold-light)] pb-1' : 'text-gray-200 hover:text-[var(--brand-gold-light)]'}`}
+          >
+            Contact
+          </a>
+          <a
+            href={`${baseUrl}furniture/contact/#request-quote`}
+            class="bg-[var(--brand-gold)] text-white px-8 py-3 rounded-md hover:bg-[var(--brand-gold-light)] transition-all font-bold shadow-md hover:shadow-lg"
+          >
+            Request Quote
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button
+          id="outdoor-mobile-menu-button"
+          class="md:hidden text-gray-200 hover:text-[var(--brand-gold-light)]"
+          aria-label="Toggle menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div id="outdoor-mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-[var(--brand-gold)]/30 pt-4">
+        <div class="flex flex-col gap-4">
+          <a
+            href={`${baseUrl}furniture/`}
+            class={`transition-colors font-semibold ${isCurrentPath('furniture/') ? 'text-[var(--brand-gold-light)]' : 'text-gray-200 hover:text-[var(--brand-gold-light)]'}`}
+          >
+            Home
+          </a>
+          <a
+            href={`${baseUrl}furniture/products/`}
+            class={`transition-colors font-semibold ${pathStartsWith('furniture/products') || pathStartsWith('furniture/sun-loungers') || pathStartsWith('furniture/outdoor-furniture') || pathStartsWith('furniture/life-saving') || pathStartsWith('furniture/camp-staff') ? 'text-[var(--brand-gold-light)]' : 'text-gray-200 hover:text-[var(--brand-gold-light)]'}`}
+          >
+            Products
+          </a>
+          <a
+            href={`${baseUrl}furniture/about/`}
+            class={`transition-colors font-semibold ${isCurrentPath('furniture/about/') ? 'text-[var(--brand-gold-light)]' : 'text-gray-200 hover:text-[var(--brand-gold-light)]'}`}
+          >
+            About Us
+          </a>
+          <a
+            href={`${baseUrl}furniture/contact/`}
+            class={`transition-colors font-semibold ${isCurrentPath('furniture/contact/') ? 'text-[var(--brand-gold-light)]' : 'text-gray-200 hover:text-[var(--brand-gold-light)]'}`}
+          >
+            Contact
+          </a>
+          <a
+            href={`${baseUrl}furniture/contact/#request-quote`}
+            class="bg-[var(--brand-gold)] text-white px-8 py-3 rounded-md hover:bg-[var(--brand-gold-light)] transition-colors font-bold text-center shadow-md"
+          >
+            Request Quote
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const button = document.getElementById('outdoor-mobile-menu-button');
+  const menu = document.getElementById('outdoor-mobile-menu');
+
+  button?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

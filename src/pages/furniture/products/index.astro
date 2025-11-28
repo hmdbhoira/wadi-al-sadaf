@@ -1,0 +1,153 @@
+---
+// Outdoor & Pool products page - shows all category tiles
+import OutdoorLayout from '../../../layouts/OutdoorLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { outdoorCategories } from '../../../data/outdoor';
+
+const baseUrl = import.meta.env.BASE_URL || '/';
+
+const breadcrumbs = [
+  { label: 'Home', href: `${baseUrl}furniture/` },
+  { label: 'Products' },
+];
+
+// Category hero images - actual outdoor/pool related photos
+const categoryImages: Record<string, string> = {
+  'sun-loungers-poolside': 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&q=80', // Pool/poolside
+  'outdoor-furniture': 'https://images.unsplash.com/photo-1600210492090-a159ffa3aeaf?w=800&q=80', // Outdoor patio furniture
+  'life-saving-pool-safety': 'https://images.unsplash.com/photo-1641137648643-610de6eda340?w=800&q=80', // Pool safety
+  'camp-staff-supplies': 'https://plus.unsplash.com/premium_photo-1661696366447-f805ed09b9b6?w=800&q=80', // Staff supplies
+};
+---
+
+<OutdoorLayout
+  title="Products"
+  description="Complete range of outdoor furniture, poolside equipment, life saving gear, and staff accommodation supplies. Premium quality products for hotels, resorts, and property developers."
+>
+  <!-- Hero Section -->
+  <section class="relative bg-[#1F4040] pt-8 pb-24 md:pt-12 md:pb-32">
+    <div class="absolute inset-0 opacity-30">
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1920&q=80')"></div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-br from-[#1F4040]/80 to-[#2D5A5A]/70"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="text-center max-w-4xl mx-auto mt-8">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-2xl">
+          Outdoor & Pool Products
+        </h1>
+        <p class="text-xl md:text-2xl text-white mb-8 drop-shadow-xl">
+          Premium outdoor furniture, pool equipment, and staff accommodation solutions for hospitality and real estate projects.
+        </p>
+        <a
+          href="#categories"
+          class="inline-block bg-[var(--brand-gold)] text-white px-8 py-4 rounded-lg hover:bg-[var(--brand-gold-light)] transition-all font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1"
+        >
+          Browse Categories
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Grid -->
+  <section id="categories" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-4">
+        Browse by Category
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        Everything you need for pool areas, outdoor spaces, and staff facilities
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {
+          outdoorCategories.map((category) => (
+            <a
+              href={`${baseUrl}furniture/${category.slug}/`}
+              class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-gray-200 hover:border-[#2D5A5A] transform hover:-translate-y-1"
+            >
+              <!-- Category Image -->
+              <div class="relative h-72 overflow-hidden bg-gradient-to-br from-[#E6F4F5] to-[#2D5A5A]/20">
+                <img
+                  src={categoryImages[category.slug] || 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80'}
+                  alt={category.name}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 class="text-3xl font-bold text-white mb-2 drop-shadow-lg">
+                    {category.name}
+                  </h3>
+                  <div class="flex items-center gap-2 text-white/90">
+                    <span class="text-sm font-medium bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                      {category.products.length} Products
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Category Info -->
+              <div class="p-6 bg-white">
+                <p class="text-gray-600 mb-6 text-base leading-relaxed">{category.description}</p>
+
+                <div class="flex items-center justify-between mt-4">
+                  <span class="text-[#2D5A5A] font-semibold group-hover:text-[#3D7A7A] transition-colors">
+                    View All Products
+                  </span>
+                  <span class="text-[#2D5A5A] group-hover:translate-x-2 transition-transform duration-300 text-xl">
+                    →
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients We Serve -->
+  <section class="py-12 bg-white border-y border-gray-200">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-3">Trusted by Industry Leaders</h3>
+        <p class="text-gray-600">Serving hotels, real estate developers, and property management companies</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+        {['Hotels & Resorts', 'Real Estate Developers', 'Beach Clubs', 'Water Parks', 'Residential Communities', 'Corporate Offices', 'Hospitals', 'Schools', 'Government Projects'].map((client) => (
+          <span class="bg-[#E6F4F5] text-[#2D5A5A] px-6 py-3 rounded-lg font-medium text-sm shadow-sm border border-[#2D5A5A]/20">
+            {client}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="relative bg-[#2D5A5A] py-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <h2 class="text-4xl font-bold text-white mb-6">Need Help Finding the Right Products?</h2>
+      <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Our team is ready to help you select the perfect outdoor furniture and equipment for your project.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href={`${baseUrl}furniture/contact/`}
+          class="bg-white text-[#2D5A5A] px-10 py-4 rounded-lg hover:bg-gray-100 transition-all font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+        >
+          Contact Us
+        </a>
+        <a
+          href="tel:+971556142174"
+          class="bg-[#1F4040] text-white px-10 py-4 rounded-lg hover:bg-[#0F3030] transition-all font-semibold text-lg border-2 border-white shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+        >
+          +971 55 614 2174
+        </a>
+      </div>
+    </div>
+  </section>
+</OutdoorLayout>

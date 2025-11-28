@@ -1,0 +1,308 @@
+---
+// About Us page for Outdoor & Pool division
+import OutdoorLayout from '../../../layouts/OutdoorLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const baseUrl = import.meta.env.BASE_URL || '/';
+
+const breadcrumbs = [
+  { label: 'Home', href: `${baseUrl}furniture/` },
+  { label: 'About Us' },
+];
+
+const companyInfo = {
+  name: 'Wadi Al Sadaf',
+  fullName: 'Wadi Al Sadaf General Trading LLC',
+  mission: 'To provide premium outdoor living solutions that enhance hospitality experiences, combining durability, style, and functionality to meet the unique demands of the Middle East market.',
+  vision: 'To become the leading supplier of outdoor furniture and pool equipment for hotels, resorts, and real estate developers across the UAE and beyond.',
+};
+
+const clientTypes = [
+  {
+    type: 'Hotels & Resorts',
+    description: 'Complete poolside and outdoor furniture solutions for luxury hospitality venues, from sun loungers to lifeguard equipment.'
+  },
+  {
+    type: 'Real Estate Developers',
+    description: 'Bulk supply of outdoor amenities for residential communities, including pool areas, gardens, and common spaces.'
+  },
+  {
+    type: 'Beach Clubs & Water Parks',
+    description: 'Premium poolside furniture and safety equipment designed for high-traffic commercial environments.'
+  },
+  {
+    type: 'Property Management',
+    description: 'Ongoing supply and replacement solutions for managed properties, apartment complexes, and community facilities.'
+  },
+  {
+    type: 'Construction Camps',
+    description: 'Staff accommodation essentials including beds, lockers, kitchen equipment, and safety gear for worker housing.'
+  },
+  {
+    type: 'Corporate & Government',
+    description: 'Outdoor facilities for corporate campuses, schools, hospitals, and government projects.'
+  }
+];
+
+const coreValues = [
+  {
+    title: 'Premium Quality',
+    description: 'We source products built to withstand the harsh Middle East climate - from intense UV exposure to high humidity. Every item is selected for durability and longevity.',
+    icon: '✓'
+  },
+  {
+    title: 'B2B Expertise',
+    description: 'We understand the needs of commercial buyers. From bulk pricing to project coordination, we\'re equipped to handle large-scale orders with professionalism.',
+    icon: '🏢'
+  },
+  {
+    title: 'Complete Solutions',
+    description: 'One source for everything you need - poolside furniture, safety equipment, and staff accommodation supplies. Simplify your procurement process.',
+    icon: '📦'
+  },
+  {
+    title: 'Reliable Delivery',
+    description: 'Timely delivery across the UAE and GCC region. We understand that project timelines matter, and we deliver when we promise.',
+    icon: '🚚'
+  }
+];
+
+const productCategories = [
+  'Sun Loungers & Poolside Furniture',
+  'Outdoor Tables & Chairs',
+  'Umbrellas & Shades',
+  'Life Saving Equipment',
+  'Pool Safety Gear',
+  'Staff Accommodation Beds',
+  'Industrial Lockers & Storage',
+  'Kitchen & Catering Equipment',
+  'Safety Workwear & PPE',
+  'Site Safety Equipment'
+];
+---
+
+<OutdoorLayout
+  title="About Us"
+  description="Learn about Wadi Al Sadaf Outdoor & Pool Division - premium outdoor furniture, pool equipment, and staff accommodation solutions for hotels, resorts, and real estate developers."
+>
+  <!-- Hero Section -->
+  <section class="relative bg-[#1F4040] pt-8 pb-24 md:pt-12 md:pb-32">
+    <div class="absolute inset-0 opacity-30">
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1920&q=80')"></div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-br from-[#1F4040]/80 to-[#2D5A5A]/70"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="text-center max-w-4xl mx-auto mt-8">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-2xl">
+          About Us
+        </h1>
+        <p class="text-xl md:text-2xl text-white mb-8 drop-shadow-xl">
+          Your trusted partner for outdoor furniture, pool equipment, and staff accommodation solutions
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Our Story
+            </h2>
+            <div class="w-20 h-1 bg-[var(--brand-gold)] mb-8"></div>
+
+            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+              <strong class="text-gray-900">Wadi Al Sadaf General Trading LLC</strong> recognized the growing demand for quality outdoor solutions in the UAE's thriving hospitality and real estate sectors. Our Outdoor & Pool division was established to serve this market with premium products and exceptional service.
+            </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+              We specialize in supplying <strong class="text-gray-900">hotels, resorts, real estate developers, and property management companies</strong> with everything they need for pool areas, outdoor spaces, and staff facilities.
+            </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Based in <strong class="text-gray-900">Dubai Industrial City</strong>, we serve clients across the UAE and broader Middle East region, offering competitive bulk pricing and reliable delivery for projects of any scale.
+            </p>
+          </div>
+
+          <div class="relative">
+            <div class="bg-[#E6F4F5] rounded-2xl p-8 shadow-xl">
+              <img
+                src={`${baseUrl}images/logo.jpeg`}
+                alt="Wadi Al Sadaf"
+                class="w-48 h-48 object-contain mx-auto rounded-full shadow-lg border-4 border-[#2D5A5A]"
+              />
+              <div class="text-center mt-6">
+                <h3 class="text-2xl font-bold text-gray-900">{companyInfo.fullName}</h3>
+                <p class="text-[#2D5A5A] mt-2 font-medium">Outdoor & Pool Division</p>
+                <p class="text-gray-600 mt-1">Dubai Industrial City, UAE</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Purpose</h2>
+          <div class="w-24 h-1 bg-[var(--brand-gold)] mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Mission -->
+          <div class="bg-white p-10 rounded-xl shadow-lg border-l-4 border-[#2D5A5A] hover:shadow-xl transition-shadow">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 bg-[#2D5A5A] rounded-xl flex items-center justify-center text-white text-2xl font-bold shadow-md">
+                M
+              </div>
+              <h3 class="text-3xl font-bold text-gray-900">Our Mission</h3>
+            </div>
+            <p class="text-gray-600 leading-relaxed text-lg">
+              {companyInfo.mission}
+            </p>
+          </div>
+
+          <!-- Vision -->
+          <div class="bg-white p-10 rounded-xl shadow-lg border-l-4 border-[#2D5A5A] hover:shadow-xl transition-shadow">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 bg-[#2D5A5A] rounded-xl flex items-center justify-center text-white text-2xl font-bold shadow-md">
+                V
+              </div>
+              <h3 class="text-3xl font-bold text-gray-900">Our Vision</h3>
+            </div>
+            <p class="text-gray-600 leading-relaxed text-lg">
+              {companyInfo.vision}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
+          <div class="w-24 h-1 bg-[var(--brand-gold)] mx-auto mb-6"></div>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            What sets us apart as your outdoor furniture and equipment partner
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          {coreValues.map((value) => (
+            <div class="bg-[#E6F4F5] p-8 rounded-xl hover:shadow-lg transition-all border border-[#2D5A5A]/20">
+              <div class="flex items-start gap-4">
+                <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center border-2 border-[#2D5A5A] flex-shrink-0">
+                  <span class="text-2xl">{value.icon}</span>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold text-gray-900 mb-3">{value.title}</h4>
+                  <p class="text-gray-600 leading-relaxed">{value.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients We Serve -->
+  <section class="py-20 bg-gradient-to-b from-[#E6F4F5] to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Who We Serve</h2>
+          <div class="w-24 h-1 bg-[var(--brand-gold)] mx-auto mb-6"></div>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Trusted by leading hospitality brands and developers across the region
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {clientTypes.map((item) => (
+            <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all border-t-4 border-[#2D5A5A]">
+              <h4 class="text-lg font-bold text-gray-900 mb-2">{item.type}</h4>
+              <p class="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Products -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Complete Product Range
+            </h2>
+            <div class="w-20 h-1 bg-[var(--brand-gold)] mb-8"></div>
+
+            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+              From poolside sun loungers to staff accommodation essentials, we offer a comprehensive range of products to meet all your outdoor and facility needs.
+            </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+              All our products are carefully selected for quality, durability, and suitability for the Middle East climate. We work with trusted manufacturers to ensure you receive reliable equipment that lasts.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-xl">
+            <h4 class="font-bold text-gray-900 mb-6 text-lg">Our Product Range:</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {productCategories.map((category) => (
+                <div class="flex items-center gap-3">
+                  <span class="text-[#2D5A5A] text-lg font-bold">✓</span>
+                  <span class="text-gray-600 text-sm">{category}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="relative bg-[#2D5A5A] py-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <h2 class="text-4xl font-bold text-white mb-6">Let's Work Together</h2>
+      <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Ready to discuss your project? Our team is here to help you find the right outdoor solutions.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href={`${baseUrl}furniture/contact/`}
+          class="bg-white text-[#2D5A5A] px-10 py-4 rounded-lg hover:bg-gray-100 transition-all font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+        >
+          Contact Us
+        </a>
+        <a
+          href={`${baseUrl}furniture/products/`}
+          class="bg-[#1F4040] text-white px-10 py-4 rounded-lg hover:bg-[#0F3030] transition-all font-semibold text-lg border-2 border-white shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+        >
+          View Products
+        </a>
+      </div>
+    </div>
+  </section>
+</OutdoorLayout>

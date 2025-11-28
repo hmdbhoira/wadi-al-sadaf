@@ -1,0 +1,167 @@
+---
+// Dynamic category page - shows all products in a category
+import OutdoorLayout from '../../../layouts/OutdoorLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { outdoorCategories, getCategoryBySlug } from '../../../data/outdoor';
+
+export async function getStaticPaths() {
+  return outdoorCategories.map((category) => ({
+    params: { category: category.slug },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL || '/';
+
+const breadcrumbs = [
+  { label: 'Home', href: `${baseUrl}furniture/` },
+  { label: 'Products', href: `${baseUrl}furniture/products/` },
+  { label: category.name },
+];
+
+// Category hero images - actual outdoor/pool related photos
+const categoryHeroImages: Record<string, string> = {
+  'sun-loungers-poolside': 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1920&q=80', // Pool/poolside
+  'outdoor-furniture': 'https://images.unsplash.com/photo-1600210492090-a159ffa3aeaf?w=1920&q=80', // Outdoor patio furniture
+  'life-saving-pool-safety': 'https://images.unsplash.com/photo-1641137648643-610de6eda340?w=1920&q=80', // Pool safety
+  'camp-staff-supplies': 'https://plus.unsplash.com/premium_photo-1661696366447-f805ed09b9b6?w=1920&q=80', // Staff supplies
+};
+
+// Product placeholder images based on category and product type
+const getProductImage = (categorySlug: string, productSlug: string): string => {
+  // Sun loungers & poolside
+  if (categorySlug === 'sun-loungers-poolside') {
+    if (productSlug.includes('lounger')) return 'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80';
+    if (productSlug.includes('table')) return 'https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?w=600&q=80';
+    return 'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&q=80';
+  }
+  // Outdoor furniture
+  if (categorySlug === 'outdoor-furniture') {
+    if (productSlug.includes('chair')) return 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=600&q=80';
+    if (productSlug.includes('table')) return 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&q=80';
+    if (productSlug.includes('umbrella')) return 'https://images.unsplash.com/photo-1520271348391-049dd132bb7c?w=600&q=80';
+    return 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&q=80';
+  }
+  // Life saving & pool safety
+  if (categorySlug === 'life-saving-pool-safety') {
+    if (productSlug.includes('jacket')) return 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80';
+    if (productSlug.includes('buoy')) return 'https://images.unsplash.com/photo-1530866495561-507c9faab2ed?w=600&q=80';
+    if (productSlug.includes('lifeguard')) return 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80';
+    return 'https://images.unsplash.com/photo-1530866495561-507c9faab2ed?w=600&q=80';
+  }
+  // Camp & staff supplies
+  if (categorySlug === 'camp-staff-supplies') {
+    if (productSlug.includes('bed') || productSlug.includes('bunk')) return 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80';
+    if (productSlug.includes('locker') || productSlug.includes('cabinet')) return 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80';
+    if (productSlug.includes('safety') || productSlug.includes('helmet') || productSlug.includes('vest')) return 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80';
+    if (productSlug.includes('shoe') || productSlug.includes('boot')) return 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80';
+    return 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80';
+  }
+  return 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&q=80';
+};
+---
+
+<OutdoorLayout
+  title={`${category.name} Products`}
+  description={category.description}
+>
+  <!-- Hero Section -->
+  <section class="relative bg-[#1F4040] pt-8 pb-24 md:pt-12 md:pb-32">
+    <div class="absolute inset-0 opacity-40">
+      <div class="absolute inset-0 bg-cover bg-center" style={`background-image: url('${categoryHeroImages[category.slug] || categoryHeroImages['outdoor-furniture']}')`}></div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-br from-[#1F4040]/80 to-[#2D5A5A]/70"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="text-center max-w-4xl mx-auto mt-8">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-2xl">
+          {category.name}
+        </h1>
+        <p class="text-xl md:text-2xl text-white mb-8 drop-shadow-xl">
+          {category.description}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-4">
+        Browse {category.name}
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        {category.products.length} products available
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        {
+          category.products.map((product) => (
+            <a
+              href={`${baseUrl}furniture/${category.slug}/${product.slug}/`}
+              class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-gray-200 hover:border-[#2D5A5A] transform hover:-translate-y-1 flex flex-col h-full"
+            >
+              <!-- Product Image -->
+              <div class="relative h-64 overflow-hidden bg-gradient-to-br from-[#E6F4F5] to-gray-100">
+                <img
+                  src={getProductImage(category.slug, product.slug)}
+                  alt={product.name}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              </div>
+
+              <!-- Product Info -->
+              <div class="p-6 flex flex-col flex-grow">
+                <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#2D5A5A] transition-colors">
+                  {product.name}
+                </h3>
+                <p class="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">
+                  {product.description}
+                </p>
+
+                <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-200">
+                  <span class="text-[#2D5A5A] font-semibold group-hover:text-[#3D7A7A] transition-colors text-sm">
+                    View Details
+                  </span>
+                  <span class="text-[#2D5A5A] group-hover:translate-x-2 transition-transform duration-300 text-xl">
+                    →
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="relative bg-[#2D5A5A] py-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <h2 class="text-4xl font-bold text-white mb-6">Need Bulk Quantities?</h2>
+      <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Get competitive pricing on bulk orders for your project. Our team is ready to assist with product selection and customization.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href={`${baseUrl}furniture/contact/`}
+          class="bg-white text-[#2D5A5A] px-10 py-4 rounded-lg hover:bg-gray-100 transition-all font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+        >
+          Request Quote
+        </a>
+        <a
+          href="tel:+971556142174"
+          class="bg-[#1F4040] text-white px-10 py-4 rounded-lg hover:bg-[#0F3030] transition-all font-semibold text-lg border-2 border-white shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+        >
+          +971 55 614 2174
+        </a>
+      </div>
+    </div>
+  </section>
+</OutdoorLayout>

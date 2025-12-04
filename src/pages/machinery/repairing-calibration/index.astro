@@ -49,9 +49,11 @@ const breadcrumbs = [
       <h2 class="text-3xl font-bold text-[var(--brand-black)] text-center mb-4">
         Our {category.name} Services
       </h2>
-      <p class="text-center text-[var(--brand-gray)] mb-12 max-w-2xl mx-auto">
-        Showing popular services in this category. Contact us for custom requirements or services not listed here.
-      </p>
+      <div class="bg-amber-50 border border-amber-200 rounded-lg px-6 py-4 mb-12 max-w-2xl mx-auto">
+        <p class="text-center text-gray-700">
+          Showing popular services in this category. <a href={`${baseUrl}machinery/contact/`} class="text-[var(--brand-gold-dark)] font-semibold hover:underline">Contact us</a> for custom requirements or services not listed here.
+        </p>
+      </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
         {

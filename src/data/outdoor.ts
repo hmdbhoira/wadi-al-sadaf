@@ -21,20 +21,20 @@ export interface Category {
   type: 'product';
 }
 
-// Category 1: Sun Loungers & Poolside
-const sunLoungersPoolside: Category = {
-  id: 'sun-loungers-poolside',
-  name: 'Sun Loungers & Poolside',
-  slug: 'sun-loungers-poolside',
-  heroImage: '/images/outdoor/sun-loungers-poolside/hero.jpg',
-  description: 'Premium poolside furniture for hotels, resorts, and residential communities. Our sun loungers combine comfort, durability, and elegant design to create the perfect relaxation experience.',
+// Category 1: Sun Loungers
+const sunLoungers: Category = {
+  id: 'sun-loungers',
+  name: 'Sun Loungers',
+  slug: 'sun-loungers',
+  heroImage: '/images/furniture/sun-loungers/hero.jpg',
+  description: 'Premium sun loungers for hotels, resorts, and residential communities. Our loungers combine comfort, durability, and elegant design to create the perfect poolside relaxation experience.',
   type: 'product',
   products: [
     {
       id: 'sun-lounger-eden',
       name: 'Sun Lounger Eden',
       slug: 'sun-lounger-eden',
-      image: '/images/outdoor/sun-loungers-poolside/sun-lounger-eden.jpg',
+      image: '/images/furniture/sun-loungers/sun-lounger-eden.jpg',
       description: 'Elegant curved design sun lounger with adjustable backrest. Perfect for luxury pool areas and beach clubs.',
       features: [
         'Adjustable backrest with multiple positions',
@@ -54,7 +54,7 @@ const sunLoungersPoolside: Category = {
       id: 'sun-lounger-alfa',
       name: 'Sun Lounger Alfa',
       slug: 'sun-lounger-alfa',
-      image: '/images/outdoor/sun-loungers-poolside/sun-lounger-alfa.jpg',
+      image: '/images/furniture/sun-loungers/sun-lounger-alfa.jpg',
       description: 'Modern design sun lounger with padded cushion and aluminum frame. Ideal for upscale hospitality venues.',
       features: [
         'Padded cushion included',
@@ -74,7 +74,7 @@ const sunLoungersPoolside: Category = {
       id: 'sun-lounger-wooden',
       name: 'Sun Lounger Wooden',
       slug: 'sun-lounger-wooden',
-      image: '/images/outdoor/sun-loungers-poolside/sun-lounger-wooden.jpg',
+      image: '/images/furniture/sun-loungers/sun-lounger-wooden.jpg',
       description: 'Classic teak wood sun lounger with timeless appeal. Premium choice for luxury resorts and villas.',
       features: [
         'Solid teak wood construction',
@@ -94,7 +94,7 @@ const sunLoungersPoolside: Category = {
       id: 'sun-lounger-rattan',
       name: 'Sun Lounger Rattan',
       slug: 'sun-lounger-rattan',
-      image: '/images/outdoor/sun-loungers-poolside/sun-lounger-rattan.jpg',
+      image: '/images/furniture/sun-loungers/sun-lounger-rattan.jpg',
       description: 'Synthetic rattan sun lounger with contemporary styling. Combines aesthetic appeal with all-weather durability.',
       features: [
         'Hand-woven synthetic rattan',
@@ -114,7 +114,7 @@ const sunLoungersPoolside: Category = {
       id: 'sun-lounger-cushion',
       name: 'Sun Lounger with Cushion',
       slug: 'sun-lounger-cushion',
-      image: '/images/outdoor/sun-loungers-poolside/sun-lounger-cushion.jpg',
+      image: '/images/furniture/sun-loungers/sun-lounger-cushion.jpg',
       description: 'Comfortable padded sun lounger with premium cushioning. Perfect for extended relaxation by the pool.',
       features: [
         'Thick padded cushion',
@@ -129,12 +129,24 @@ const sunLoungersPoolside: Category = {
         'Dimensions': '190 x 65 x 40 cm',
         'Colors': 'Red, Blue, Beige, Green'
       }
-    },
+    }
+  ]
+};
+
+// Category 2: Poolside & Outdoor Furniture
+const poolsideOutdoorFurniture: Category = {
+  id: 'poolside-outdoor-furniture',
+  name: 'Poolside & Outdoor Furniture',
+  slug: 'poolside-outdoor-furniture',
+  heroImage: '/images/furniture/poolside-outdoor-furniture/hero.jpg',
+  description: 'Complete poolside and outdoor furniture solutions including tables, chairs, umbrellas, and shade structures. Durable designs built to withstand the Middle East climate.',
+  type: 'product',
+  products: [
     {
       id: 'poolside-table',
       name: 'Center / Side Table',
       slug: 'poolside-table',
-      image: '/images/outdoor/sun-loungers-poolside/poolside-table.jpg',
+      image: '/images/furniture/poolside-outdoor-furniture/poolside-table.jpg',
       description: 'Versatile poolside table perfect for drinks and accessories. Complements any sun lounger setup.',
       features: [
         'Compact design',
@@ -149,31 +161,19 @@ const sunLoungersPoolside: Category = {
         'Weight': '3 kg',
         'Colors': 'White, Grey, Brown'
       }
-    }
-  ]
-};
-
-// Category 2: Outdoor Furniture
-const outdoorFurniture: Category = {
-  id: 'outdoor-furniture',
-  name: 'Outdoor Furniture',
-  slug: 'outdoor-furniture',
-  heroImage: '/images/outdoor/outdoor-furniture/hero.jpg',
-  description: 'Complete outdoor furniture solutions for gardens, terraces, and common areas. Durable designs built to withstand the Middle East climate while maintaining elegance.',
-  type: 'product',
-  products: [
+    },
     {
-      id: 'plastic-chair-italy',
-      name: 'Plastic Chair - Italian Design',
-      slug: 'plastic-chair-italy',
-      image: '/images/outdoor/outdoor-furniture/plastic-chair-italy.jpg',
-      description: 'Elegant Italian-designed plastic chair suitable for outdoor dining and casual seating areas.',
+      id: 'plastic-chairs',
+      name: 'Plastic Chairs',
+      slug: 'plastic-chairs',
+      image: '/images/furniture/poolside-outdoor-furniture/plastic-chairs.jpg',
+      description: 'Durable plastic chairs suitable for outdoor dining and casual seating areas around pools and patios.',
       features: [
-        'Italian design aesthetics',
         'High-impact polypropylene',
         'Stackable up to 12 chairs',
         'UV-stabilized material',
-        'Easy maintenance'
+        'Easy maintenance',
+        'Multiple colors available'
       ],
       specifications: {
         'Material': 'Virgin polypropylene',
@@ -183,30 +183,10 @@ const outdoorFurniture: Category = {
       }
     },
     {
-      id: 'folding-table',
-      name: 'Folding Table',
-      slug: 'folding-table',
-      image: '/images/outdoor/outdoor-furniture/folding-table.jpg',
-      description: 'Heavy-duty folding table ideal for events, outdoor gatherings, and flexible space requirements.',
-      features: [
-        'Folds flat for storage',
-        'Sturdy metal legs',
-        'Scratch-resistant surface',
-        'Portable design',
-        'Multiple sizes available'
-      ],
-      specifications: {
-        'Top Material': 'HDPE plastic',
-        'Frame': 'Powder-coated steel',
-        'Dimensions': '180 x 75 x 74 cm',
-        'Folded Height': '10 cm'
-      }
-    },
-    {
       id: 'umbrella-cantilever',
       name: 'Umbrella Cantilever',
       slug: 'umbrella-cantilever',
-      image: '/images/outdoor/outdoor-furniture/umbrella-cantilever.jpg',
+      image: '/images/furniture/poolside-outdoor-furniture/umbrella-cantilever.webp',
       description: 'Large cantilever umbrella providing maximum shade coverage. Perfect for pool decks and outdoor dining areas.',
       features: [
         'Offset pole design',
@@ -226,7 +206,7 @@ const outdoorFurniture: Category = {
       id: 'umbrella-aluminum',
       name: 'Umbrella - Aluminum Finish',
       slug: 'umbrella-aluminum',
-      image: '/images/outdoor/outdoor-furniture/umbrella-aluminum.jpg',
+      image: '/images/furniture/poolside-outdoor-furniture/umbrella-aluminum.jpg',
       description: 'Classic center-pole umbrella with premium aluminum construction. Ideal for cafes and poolside settings.',
       features: [
         'Lightweight aluminum pole',
@@ -246,7 +226,7 @@ const outdoorFurniture: Category = {
       id: 'umbrella-wooden',
       name: 'Umbrella - Wooden Finish',
       slug: 'umbrella-wooden',
-      image: '/images/outdoor/outdoor-furniture/umbrella-wooden.jpg',
+      image: '/images/furniture/poolside-outdoor-furniture/umbrella-wooden.jpg',
       description: 'Traditional wooden umbrella adding natural elegance to any outdoor space. Premium hardwood construction.',
       features: [
         'Solid hardwood pole',
@@ -266,7 +246,7 @@ const outdoorFurniture: Category = {
       id: 'umbrella-base',
       name: 'Umbrella Base - Granite/Concrete',
       slug: 'umbrella-base',
-      image: '/images/outdoor/outdoor-furniture/umbrella-base.jpg',
+      image: '/images/furniture/poolside-outdoor-furniture/umbrella-base.jpg',
       description: 'Heavy-duty umbrella base providing stable support for all umbrella types. Available in granite and concrete finishes.',
       features: [
         'Heavy-duty construction',
@@ -290,7 +270,7 @@ const lifeSavingPoolSafety: Category = {
   id: 'life-saving-pool-safety',
   name: 'Life Saving & Pool Safety',
   slug: 'life-saving-pool-safety',
-  heroImage: '/images/outdoor/life-saving-pool-safety/hero.jpg',
+  heroImage: '/images/furniture/life-saving-pool-safety/hero.jpg',
   description: 'Essential pool safety and life saving equipment for compliance and protection. Trusted by hotels, water parks, and residential communities across the Middle East.',
   type: 'product',
   products: [
@@ -298,7 +278,7 @@ const lifeSavingPoolSafety: Category = {
       id: 'life-jacket',
       name: 'Life Jacket',
       slug: 'life-jacket',
-      image: '/images/outdoor/life-saving-pool-safety/life-jacket.jpg',
+      image: '/images/furniture/life-saving-pool-safety/life-jacket.jpg',
       description: 'Professional-grade life jacket for water safety. Essential equipment for pools, beaches, and marine activities.',
       features: [
         'High buoyancy foam',
@@ -318,7 +298,7 @@ const lifeSavingPoolSafety: Category = {
       id: 'life-buoy-ring',
       name: 'Life Buoy Ring',
       slug: 'life-buoy-ring',
-      image: '/images/outdoor/life-saving-pool-safety/life-buoy-ring.jpg',
+      image: '/images/furniture/life-saving-pool-safety/life-buoy-ring.jpg',
       description: 'Standard life buoy ring for emergency rescue situations. Mandatory safety equipment for all pool facilities.',
       features: [
         'High-visibility orange color',
@@ -339,7 +319,7 @@ const lifeSavingPoolSafety: Category = {
       id: 'rescue-tube',
       name: 'Rescue Tube',
       slug: 'rescue-tube',
-      image: '/images/outdoor/life-saving-pool-safety/rescue-tube.jpg',
+      image: '/images/furniture/life-saving-pool-safety/rescue-tube.jpg',
       description: 'Professional rescue tube used by lifeguards for water rescues. Flexible design allows wrapping around victims.',
       features: [
         'Flexible vinyl construction',
@@ -356,10 +336,30 @@ const lifeSavingPoolSafety: Category = {
       }
     },
     {
+      id: 'rescue-can',
+      name: 'Rescue Can',
+      slug: 'rescue-can',
+      image: '/images/furniture/life-saving-pool-safety/rescue-can.webp',
+      description: 'Professional rescue can (torpedo buoy) for lifeguard water rescues. Rigid design provides stable flotation support.',
+      features: [
+        'Rigid plastic construction',
+        'Multiple grab handles',
+        'Shoulder strap included',
+        'High-visibility color',
+        'Durable and long-lasting'
+      ],
+      specifications: {
+        'Length': '70 cm',
+        'Material': 'High-density polyethylene',
+        'Buoyancy': '100+ kg support',
+        'Color': 'Red/Orange'
+      }
+    },
+    {
       id: 'rescue-hook',
       name: 'Rescue Hook / Life Hook',
       slug: 'rescue-hook',
-      image: '/images/outdoor/life-saving-pool-safety/rescue-hook.jpg',
+      image: '/images/furniture/life-saving-pool-safety/rescue-hook.jpg',
       description: 'Extended reach rescue hook for pulling swimmers to safety from poolside. Essential lifeguard equipment.',
       features: [
         'Telescopic pole option',
@@ -379,7 +379,7 @@ const lifeSavingPoolSafety: Category = {
       id: 'spine-board',
       name: 'Spine Board with Head Immobilizer',
       slug: 'spine-board',
-      image: '/images/outdoor/life-saving-pool-safety/spine-board.jpg',
+      image: '/images/furniture/life-saving-pool-safety/spine-board.jpg',
       description: 'Emergency spine board for safe victim transport. Critical equipment for serious pool incidents.',
       features: [
         'Full-length immobilization',
@@ -400,7 +400,7 @@ const lifeSavingPoolSafety: Category = {
       id: 'lifeguard-chair-wooden',
       name: 'Lifeguard Chair - Wooden',
       slug: 'lifeguard-chair-wooden',
-      image: '/images/outdoor/life-saving-pool-safety/lifeguard-chair-wooden.jpg',
+      image: '/images/furniture/life-saving-pool-safety/lifeguard-chair-wooden.jpg',
       description: 'Classic wooden lifeguard chair providing elevated observation point. Available in 2, 3, and 4 step heights.',
       features: [
         'Solid wood construction',
@@ -420,7 +420,7 @@ const lifeSavingPoolSafety: Category = {
       id: 'lifeguard-chair-stainless',
       name: 'Lifeguard Chair - Stainless Steel',
       slug: 'lifeguard-chair-stainless',
-      image: '/images/outdoor/life-saving-pool-safety/lifeguard-chair-stainless.jpg',
+      image: '/images/furniture/life-saving-pool-safety/lifeguard-chair-stainless.webp',
       description: 'Premium stainless steel lifeguard chair for maximum durability. Ideal for commercial and public pools.',
       features: [
         'Marine-grade stainless steel',
@@ -440,7 +440,7 @@ const lifeSavingPoolSafety: Category = {
       id: 'first-aid-box',
       name: 'First Aid Box',
       slug: 'first-aid-box',
-      image: '/images/outdoor/life-saving-pool-safety/first-aid-box.jpg',
+      image: '/images/furniture/life-saving-pool-safety/first-aid-box.jpg',
       description: 'Comprehensive first aid kit for poolside emergencies. Fully stocked with essential medical supplies.',
       features: [
         'Wall-mountable design',
@@ -464,7 +464,7 @@ const campStaffSupplies: Category = {
   id: 'camp-staff-supplies',
   name: 'Camp & Staff Supplies',
   slug: 'camp-staff-supplies',
-  heroImage: '/images/outdoor/camp-staff-supplies/hero.jpg',
+  heroImage: '/images/furniture/camp-staff-supplies/hero.jpg',
   description: 'Complete solutions for worker camps and staff facilities. Beds, lockers, kitchen equipment, safety gear, and everything needed to outfit your accommodation sites.',
   type: 'product',
   products: [
@@ -1373,8 +1373,8 @@ const campStaffSupplies: Category = {
 
 // Export all categories
 export const outdoorCategories: Category[] = [
-  sunLoungersPoolside,
-  outdoorFurniture,
+  sunLoungers,
+  poolsideOutdoorFurniture,
   lifeSavingPoolSafety,
   campStaffSupplies
 ];

@@ -13,8 +13,8 @@ const breadcrumbs = [
 
 // Category hero images - actual outdoor/pool related photos
 const categoryImages: Record<string, string> = {
-  'sun-loungers-poolside': 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&q=80', // Pool/poolside
-  'outdoor-furniture': 'https://images.unsplash.com/photo-1600210492090-a159ffa3aeaf?w=800&q=80', // Outdoor patio furniture
+  'sun-loungers': 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&q=80', // Pool/poolside
+  'poolside-outdoor-furniture': 'https://images.unsplash.com/photo-1600210492090-a159ffa3aeaf?w=800&q=80', // Outdoor patio furniture
   'life-saving-pool-safety': 'https://images.unsplash.com/photo-1641137648643-610de6eda340?w=800&q=80', // Pool safety
   'camp-staff-supplies': 'https://plus.unsplash.com/premium_photo-1661696366447-f805ed09b9b6?w=800&q=80', // Staff supplies
 };
@@ -69,7 +69,7 @@ const categoryImages: Record<string, string> = {
               <!-- Category Image -->
               <div class="relative h-72 overflow-hidden bg-gradient-to-br from-[#E6F4F5] to-[#2D5A5A]/20">
                 <img
-                  src={categoryImages[category.slug] || 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80'}
+                  src={`${baseUrl}${category.heroImage.slice(1)}`}
                   alt={category.name}
                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />

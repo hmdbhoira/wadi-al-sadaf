@@ -20,26 +20,30 @@ const breadcrumbs = [
   { label: category.name },
 ];
 
+// Custom background positions for hero images
+const heroPositions: Record<string, string> = {
+  'poolside-outdoor-furniture': 'center 30%',
+};
+
 // Category hero images - actual outdoor/pool related photos
 const categoryHeroImages: Record<string, string> = {
-  'sun-loungers-poolside': 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1920&q=80', // Pool/poolside
-  'outdoor-furniture': 'https://images.unsplash.com/photo-1600210492090-a159ffa3aeaf?w=1920&q=80', // Outdoor patio furniture
+  'sun-loungers': 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1920&q=80', // Pool/poolside
+  'poolside-outdoor-furniture': 'https://images.unsplash.com/photo-1600210492090-a159ffa3aeaf?w=1920&q=80', // Outdoor patio furniture
   'life-saving-pool-safety': 'https://images.unsplash.com/photo-1641137648643-610de6eda340?w=1920&q=80', // Pool safety
   'camp-staff-supplies': 'https://plus.unsplash.com/premium_photo-1661696366447-f805ed09b9b6?w=1920&q=80', // Staff supplies
 };
 
 // Product placeholder images based on category and product type
 const getProductImage = (categorySlug: string, productSlug: string): string => {
-  // Sun loungers & poolside
-  if (categorySlug === 'sun-loungers-poolside') {
+  // Sun loungers
+  if (categorySlug === 'sun-loungers') {
     if (productSlug.includes('lounger')) return 'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80';
-    if (productSlug.includes('table')) return 'https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?w=600&q=80';
     return 'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&q=80';
   }
-  // Outdoor furniture
-  if (categorySlug === 'outdoor-furniture') {
+  // Poolside & outdoor furniture
+  if (categorySlug === 'poolside-outdoor-furniture') {
     if (productSlug.includes('chair')) return 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=600&q=80';
-    if (productSlug.includes('table')) return 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&q=80';
+    if (productSlug.includes('table')) return 'https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?w=600&q=80';
     if (productSlug.includes('umbrella')) return 'https://images.unsplash.com/photo-1520271348391-049dd132bb7c?w=600&q=80';
     return 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&q=80';
   }
@@ -69,7 +73,7 @@ const getProductImage = (categorySlug: string, productSlug: string): string => {
   <!-- Hero Section -->
   <section class="relative bg-[#1F4040] pt-8 pb-24 md:pt-12 md:pb-32">
     <div class="absolute inset-0 opacity-40">
-      <div class="absolute inset-0 bg-cover bg-center" style={`background-image: url('${categoryHeroImages[category.slug] || categoryHeroImages['outdoor-furniture']}')`}></div>
+      <div class="absolute inset-0 bg-cover" style={`background-image: url('${baseUrl}${category.heroImage.slice(1)}'); background-position: ${heroPositions[category.slug] || 'center'}`}></div>
     </div>
     <div class="absolute inset-0 bg-gradient-to-br from-[#1F4040]/50 to-[#2D5A5A]/40"></div>
     <div class="container mx-auto px-4 relative z-10">
@@ -105,7 +109,7 @@ const getProductImage = (categorySlug: string, productSlug: string): string => {
               <!-- Product Image -->
               <div class="relative h-64 overflow-hidden bg-gradient-to-br from-[#E6F4F5] to-gray-100">
                 <img
-                  src={getProductImage(category.slug, product.slug)}
+                  src={`${baseUrl}${product.image.startsWith('/') ? product.image.slice(1) : product.image}`}
                   alt={product.name}
                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
